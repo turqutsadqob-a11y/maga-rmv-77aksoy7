@@ -44,4 +44,182 @@ body {
 
 .subtitle {
     color: #7890a5;
-    font-size: 
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+input {
+    width: 100%;
+    height: 52px;
+    border-radius: 12px;
+    border: 1px solid #24384b;
+    background: #050910;
+    color: white;
+    padding: 0 16px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 14px;
+}
+
+input:focus {
+    border-color: #00aaff;
+}
+
+button,
+.store-button {
+    width: 100%;
+    height: 52px;
+    border: 0;
+    border-radius: 12px;
+    background: #079fe8;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover,
+.store-button:hover {
+    opacity: 0.88;
+}
+
+.error {
+    min-height: 20px;
+    color: #ff5364;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+#store {
+    display: none;
+}
+
+.info {
+    color: #71869a;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 18px;
+}
+
+.footer {
+    margin-top: 25px;
+    color: #465667;
+    font-size: 11px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="logo">MAGA</div>
+
+    <div class="subtitle">
+        MAGA STORE • RMV 77AKSOY7
+    </div>
+
+    <!-- LOGIN -->
+    <div id="login">
+
+        <input
+            id="keyInput"
+            type="password"
+            placeholder="ENTER YOUR KEY"
+            autocomplete="off"
+        >
+
+        <button onclick="login()">
+            ENTER
+        </button>
+
+        <div id="error" class="error"></div>
+
+        <div class="info">
+            Sayta daxil olmaq üçün KEY yaz.
+        </div>
+
+    </div>
+
+
+    <!-- STORE -->
+    <div id="store">
+
+        <a
+            class="store-button"
+            href="https://www.midasbuy.com/midasbuy/tr/buy/pubgm?from=homescreen"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            PUBG UC TOP UP
+        </a>
+
+        <button onclick="downloadInfo()">
+            DOWNLOAD
+        </button>
+
+        <div class="info">
+            UC TOP UP düyməsi rəsmi Midasbuy səhifəsini
+            yeni pəncərədə açır.
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        © 2026 MAGA STORE
+    </div>
+
+</div>
+
+
+<script>
+
+const SITE_KEY = "MAGA-77AKSOY7";
+
+function login() {
+
+    const input = document.getElementById("keyInput");
+    const error = document.getElementById("error");
+
+    const enteredKey = input.value.trim();
+
+    if (enteredKey === SITE_KEY) {
+
+        document.getElementById("login").style.display = "none";
+        document.getElementById("store").style.display = "block";
+
+    } else {
+
+        error.textContent = "INVALID KEY";
+
+        input.value = "";
+
+    }
+}
+
+
+function downloadInfo() {
+
+    alert("DOWNLOAD üçün fayl hələ əlavə edilməyib.");
+
+}
+
+document.getElementById("keyInput").addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+        login();
+    }
+
+});
+
+</script>
+
+</body>
+</html> 
