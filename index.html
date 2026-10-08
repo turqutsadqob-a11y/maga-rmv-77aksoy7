@@ -3,221 +3,303 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MAGA STORE</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-body {
-    min-height: 100vh;
-    background: #030509;
-    color: white;
-    font-family: Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+body{
+  font-family:Arial, sans-serif;
+  background:#f7f7f9;
+  color:#17172b;
 }
 
-.card {
-    width: 100%;
-    max-width: 390px;
-    background: #080d15;
-    border: 1px solid #182534;
-    border-radius: 22px;
-    padding: 32px 24px;
-    text-align: center;
-    box-shadow: 0 0 35px rgba(0, 170, 255, 0.12);
+.header{
+  height:72px;
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 22px;
+  border-bottom:1px solid #eee;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
-.logo {
-    font-size: 34px;
-    font-weight: 800;
-    letter-spacing: 4px;
-    margin-bottom: 8px;
+.logo{
+  font-size:30px;
+  font-weight:900;
+  color:#6500ff;
 }
 
-.subtitle {
-    color: #7890a5;
-    font-size: 13px;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
+.icons{
+  display:flex;
+  gap:20px;
+  font-size:25px;
 }
 
-input {
-    width: 100%;
-    height: 52px;
-    border-radius: 12px;
-    border: 1px solid #24384b;
-    background: #050910;
-    color: white;
-    padding: 0 16px;
-    font-size: 15px;
-    outline: none;
-    margin-bottom: 14px;
+.container{
+  max-width:650px;
+  margin:auto;
+  background:white;
+  min-height:100vh;
 }
 
-input:focus {
-    border-color: #00aaff;
+.product-img{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  background:#ddd;
 }
 
-button,
-.store-button {
-    width: 100%;
-    height: 52px;
-    border: 0;
-    border-radius: 12px;
-    background: #079fe8;
-    color: white;
-    font-size: 15px;
-    font-weight: 700;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    margin-top: 10px;
+.content{
+  padding:25px 22px 40px;
 }
 
-button:hover,
-.store-button:hover {
-    opacity: 0.88;
+h1{
+  font-size:27px;
+  line-height:1.25;
+  margin-bottom:18px;
 }
 
-.error {
-    min-height: 20px;
-    color: #ff5364;
-    font-size: 13px;
-    margin-top: 10px;
+.price{
+  font-size:25px;
+  font-weight:bold;
+  margin-bottom:28px;
 }
 
-#store {
-    display: none;
+.old-price{
+  color:#999;
+  text-decoration:line-through;
+  font-weight:normal;
+  margin-left:8px;
 }
 
-.info {
-    color: #71869a;
-    font-size: 12px;
-    line-height: 1.5;
-    margin-top: 18px;
+.quantity{
+  height:75px;
+  border:1px solid #ddd;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 22px;
+  margin-bottom:22px;
 }
 
-.footer {
-    margin-top: 25px;
-    color: #465667;
-    font-size: 11px;
+.quantity-title{
+  font-size:18px;
+}
+
+.counter{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  font-size:22px;
+}
+
+.counter button{
+  border:0;
+  background:#f4f4f6;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  font-size:27px;
+}
+
+#count{
+  font-size:20px;
+}
+
+.buy{
+  width:100%;
+  height:62px;
+  border:0;
+  border-radius:35px;
+  background:#6500ff;
+  color:white;
+  font-size:21px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.cart{
+  width:100%;
+  height:62px;
+  border-radius:35px;
+  border:2px solid #6500ff;
+  background:white;
+  color:#6500ff;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.info{
+  margin-top:30px;
+  padding-top:25px;
+  border-top:1px solid #eee;
+}
+
+.info h2{
+  font-size:20px;
+  margin-bottom:12px;
+}
+
+.info p{
+  color:#666;
+  line-height:1.6;
+}
+
+.notice{
+  margin-top:20px;
+  padding:15px;
+  border-radius:12px;
+  background:#f2efff;
+  color:#4d00b8;
+  font-size:14px;
+}
+
+#message{
+  display:none;
+  margin-top:18px;
+  padding:14px;
+  border-radius:12px;
+  background:#eee;
+  text-align:center;
+}
+
+@media(max-width:500px){
+  .product-img{
+    height:310px;
+  }
+
+  h1{
+    font-size:24px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<div class="container">
 
+  <header class="header">
     <div class="logo">MAGA</div>
 
-    <div class="subtitle">
-        MAGA STORE • RMV 77AKSOY7
+    <div class="icons">
+      <span>⌕</span>
+      <span>♙</span>
+      <span>🛍</span>
+    </div>
+  </header>
+
+  <!-- Məhsul şəkli -->
+  <img
+    class="product-img"
+    src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=80"
+    alt="PUBG MOBILE"
+  >
+
+  <main class="content">
+
+    <h1>PUBG MOBILE RANDOM HESAB</h1>
+
+    <div class="price">
+      180 TL
+      <span class="old-price">200 TL</span>
     </div>
 
-    <!-- LOGIN -->
-    <div id="login">
+    <div class="quantity">
 
-        <input
-            id="keyInput"
-            type="password"
-            placeholder="ENTER YOUR KEY"
-            autocomplete="off"
-        >
+      <span class="quantity-title">Adət</span>
 
-        <button onclick="login()">
-            ENTER
-        </button>
+      <div class="counter">
+        <button onclick="minus()">−</button>
 
-        <div id="error" class="error"></div>
+        <span id="count">1</span>
 
-        <div class="info">
-            Sayta daxil olmaq üçün KEY yaz.
-        </div>
-
-    </div>
-
-
-    <!-- STORE -->
-    <div id="store">
-
-        <a
-            class="store-button"
-            href="https://www.midasbuy.com/midasbuy/tr/buy/pubgm?from=homescreen"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            PUBG UC TOP UP
-        </a>
-
-        <button onclick="downloadInfo()">
-            DOWNLOAD
-        </button>
-
-        <div class="info">
-            UC TOP UP düyməsi rəsmi Midasbuy səhifəsini
-            yeni pəncərədə açır.
-        </div>
+        <button onclick="plus()">+</button>
+      </div>
 
     </div>
 
+    <button class="cart" onclick="addCart()">
+      Səbətə əlavə et
+    </button>
 
-    <div class="footer">
-        © 2026 MAGA STORE
-    </div>
+    <button class="buy" onclick="buyNow()">
+      İndi al
+    </button>
+
+    <div id="message"></div>
+
+    <section class="info">
+
+      <h2>Məhsul haqqında</h2>
+
+      <p>
+        PUBG MOBILE random hesab məhsulu.
+        Hesabın məzmunu təsadüfi ola bilər.
+        Məhsul məlumatlarını satın almadan əvvəl
+        diqqətlə yoxlayın.
+      </p>
+
+      <div class="notice">
+        ⚠️ Bu səhifə MAGA STORE demo mağaza interfeysidir.
+        Real ödəniş və hesab təhvil sistemi hələ aktiv deyil.
+      </div>
+
+    </section>
+
+  </main>
 
 </div>
 
-
 <script>
 
-const SITE_KEY = "MAGA-77AKSOY7";
+let count = 1;
 
-function login() {
-
-    const input = document.getElementById("keyInput");
-    const error = document.getElementById("error");
-
-    const enteredKey = input.value.trim();
-
-    if (enteredKey === SITE_KEY) {
-
-        document.getElementById("login").style.display = "none";
-        document.getElementById("store").style.display = "block";
-
-    } else {
-
-        error.textContent = "INVALID KEY";
-
-        input.value = "";
-
-    }
+function plus(){
+  count++;
+  document.getElementById("count").innerText = count;
 }
 
+function minus(){
+  if(count > 1){
+    count--;
+  }
 
-function downloadInfo() {
+  document.getElementById("count").innerText = count;
+}
 
-    alert("DOWNLOAD üçün fayl hələ əlavə edilməyib.");
+function addCart(){
+
+  let message = document.getElementById("message");
+
+  message.style.display = "block";
+
+  message.innerText =
+    "🛒 Məhsul səbətə əlavə edildi — " +
+    count +
+    " ədəd.";
 
 }
 
-document.getElementById("keyInput").addEventListener("keydown", function(event) {
+function buyNow(){
 
-    if (event.key === "Enter") {
-        login();
-    }
+  let message = document.getElementById("message");
 
-});
+  message.style.display = "block";
+
+  message.innerText =
+    "Ödəniş sistemi hazırda demo rejimindədir.";
+
+}
 
 </script>
 
