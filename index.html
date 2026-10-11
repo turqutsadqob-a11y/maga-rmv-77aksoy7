@@ -1,307 +1,182 @@
-<!DOCTYPE html>
-<html lang="az">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAGA STORE</title>
 
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+<!-- MAGA STORE SİFARİŞ EKRANI -->
+<div id="magaCheckout" class="maga-overlay" style="display:none">
+  <div class="maga-card">
+    <button class="maga-close" onclick="magaClose('magaCheckout')">×</button>
+    <h2>MAGA STORE</h2>
+    <p class="maga-sub">SİFARİŞ MƏLUMATLARI</p>
 
-body{
-  font-family:Arial, sans-serif;
-  background:#f7f7f9;
-  color:#17172b;
-}
+    <form id="magaForm">
+      <label>Ad</label>
+      <input id="magaName" required placeholder="Adınız">
 
-.header{
-  height:72px;
-  background:white;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 22px;
-  border-bottom:1px solid #eee;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
+      <label>Soyad</label>
+      <input id="magaSurname" required placeholder="Soyadınız">
 
-.logo{
-  font-size:30px;
-  font-weight:900;
-  color:#6500ff;
-}
+      <label>Ölkə</label>
+      <select id="magaCountry" required>
+        <option value="+994">Azərbaycan (+994)</option>
+        <option value="+90">Türkiyə (+90)</option>
+        <option value="+7">Rusiya (+7)</option>
+        <option value="+1">ABŞ / Kanada (+1)</option>
+        <option value="+44">Böyük Britaniya (+44)</option>
+        <option value="+49">Almaniya (+49)</option>
+        <option value="+33">Fransa (+33)</option>
+        <option value="+966">Səudiyyə Ərəbistanı (+966)</option>
+      </select>
 
-.icons{
-  display:flex;
-  gap:20px;
-  font-size:25px;
-}
+      <label>Telefon nömrəsi</label>
+      <input id="magaPhone" type="tel" required
+             placeholder="50 123 45 67">
 
-.container{
-  max-width:650px;
-  margin:auto;
-  background:white;
-  min-height:100vh;
-}
+      <label>Gmail / E-mail</label>
+      <input id="magaEmail" type="email" required
+             placeholder="example@gmail.com">
 
-.product-img{
-  width:100%;
-  height:360px;
-  object-fit:cover;
-  background:#ddd;
-}
+      <label>Satıcıya notunuz</label>
+      <textarea id="magaNote" placeholder="Qeydiniz (istəyə bağlı)"></textarea>
 
-.content{
-  padding:25px 22px 40px;
-}
-
-h1{
-  font-size:27px;
-  line-height:1.25;
-  margin-bottom:18px;
-}
-
-.price{
-  font-size:25px;
-  font-weight:bold;
-  margin-bottom:28px;
-}
-
-.old-price{
-  color:#999;
-  text-decoration:line-through;
-  font-weight:normal;
-  margin-left:8px;
-}
-
-.quantity{
-  height:75px;
-  border:1px solid #ddd;
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 22px;
-  margin-bottom:22px;
-}
-
-.quantity-title{
-  font-size:18px;
-}
-
-.counter{
-  display:flex;
-  align-items:center;
-  gap:22px;
-  font-size:22px;
-}
-
-.counter button{
-  border:0;
-  background:#f4f4f6;
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  font-size:27px;
-}
-
-#count{
-  font-size:20px;
-}
-
-.buy{
-  width:100%;
-  height:62px;
-  border:0;
-  border-radius:35px;
-  background:#6500ff;
-  color:white;
-  font-size:21px;
-  font-weight:bold;
-  margin-bottom:15px;
-}
-
-.cart{
-  width:100%;
-  height:62px;
-  border-radius:35px;
-  border:2px solid #6500ff;
-  background:white;
-  color:#6500ff;
-  font-size:20px;
-  font-weight:bold;
-}
-
-.info{
-  margin-top:30px;
-  padding-top:25px;
-  border-top:1px solid #eee;
-}
-
-.info h2{
-  font-size:20px;
-  margin-bottom:12px;
-}
-
-.info p{
-  color:#666;
-  line-height:1.6;
-}
-
-.notice{
-  margin-top:20px;
-  padding:15px;
-  border-radius:12px;
-  background:#f2efff;
-  color:#4d00b8;
-  font-size:14px;
-}
-
-#message{
-  display:none;
-  margin-top:18px;
-  padding:14px;
-  border-radius:12px;
-  background:#eee;
-  text-align:center;
-}
-
-@media(max-width:500px){
-  .product-img{
-    height:310px;
-  }
-
-  h1{
-    font-size:24px;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-  <header class="header">
-    <div class="logo">MAGA</div>
-
-    <div class="icons">
-      <span>⌕</span>
-      <span>♙</span>
-      <span>🛍</span>
-    </div>
-  </header>
-
-  <!-- Məhsul şəkli -->
-  <img
-    class="product-img"
-    src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=80"
-    alt="PUBG MOBILE"
-  >
-
-  <main class="content">
-
-    <h1>PUBG MOBILE RANDOM HESAB</h1>
-
-    <div class="price">
-      180 TL
-      <span class="old-price">200 TL</span>
-    </div>
-
-    <div class="quantity">
-
-      <span class="quantity-title">Adət</span>
-
-      <div class="counter">
-        <button onclick="minus()">−</button>
-
-        <span id="count">1</span>
-
-        <button onclick="plus()">+</button>
+      <div class="maga-total">
+        <span>Ümumi məbləğ</span>
+        <strong id="magaTotal">0.00 AZN</strong>
       </div>
 
-    </div>
-
-    <button class="cart" onclick="addCart()">
-      Səbətə əlavə et
-    </button>
-
-    <button class="buy" onclick="buyNow()">
-      İndi al
-    </button>
-
-    <div id="message"></div>
-
-    <section class="info">
-
-      <h2>Məhsul haqqında</h2>
-
-      <p>
-        PUBG MOBILE random hesab məhsulu.
-        Hesabın məzmunu təsadüfi ola bilər.
-        Məhsul məlumatlarını satın almadan əvvəl
-        diqqətlə yoxlayın.
-      </p>
-
-      <div class="notice">
-        ⚠️ Bu səhifə MAGA STORE demo mağaza interfeysidir.
-        Real ödəniş və hesab təhvil sistemi hələ aktiv deyil.
-      </div>
-
-    </section>
-
-  </main>
-
+      <button class="maga-pay" type="submit">ÖDƏMƏYƏ KEÇ</button>
+    </form>
+  </div>
 </div>
 
+<!-- DEMO ÖDƏNİŞ EKRANI -->
+<div id="magaPayment" class="maga-overlay" style="display:none">
+  <div class="maga-card maga-center">
+    <button class="maga-close" onclick="magaClose('magaPayment')">×</button>
+    <div style="font-size:42px">🔒</div>
+    <h2>ÖDƏNİŞ</h2>
+    <p class="maga-sub">MAGA STORE</p>
+
+    <div class="maga-total">
+      <span>Sifariş məbləği</span>
+      <strong id="magaPayTotal">0.00 AZN</strong>
+    </div>
+
+    <div class="maga-demo">
+      Ödəniş yerimiz hazırda demo rejimindədir.
+      Real ödəniş hələ aktiv deyil.
+    </div>
+
+    <button class="maga-pay" onclick="magaClose('magaPayment')">
+      GERİ QAYIT
+    </button>
+  </div>
+</div>
+
+<style>
+.maga-overlay {
+  position:fixed; inset:0; z-index:99999;
+  overflow-y:auto; padding:18px;
+  background:rgba(0,0,0,.9);
+  backdrop-filter:blur(8px);
+  box-sizing:border-box;
+}
+.maga-card {
+  position:relative;
+  box-sizing:border-box;
+  width:100%; max-width:440px;
+  margin:20px auto;
+  padding:25px 21px;
+  background:#080d15; color:#fff;
+  border:1px solid #12304b;
+  border-radius:20px;
+  box-shadow:0 0 30px #087cff18;
+  font-family:Arial,sans-serif;
+}
+.maga-card h2 {
+  text-align:center; margin:8px 0;
+  letter-spacing:2px;
+}
+.maga-sub {
+  text-align:center; color:#36aaff;
+  font-size:12px; letter-spacing:2px;
+  margin:10px 0 24px;
+}
+.maga-close {
+  position:absolute; right:15px; top:10px;
+  border:0; background:none; color:#aab5c4;
+  font-size:28px; cursor:pointer;
+}
+.maga-card label {
+  display:block; margin:14px 0 7px;
+  color:#bdc9d8; font-size:13px;
+}
+.maga-card input,
+.maga-card select,
+.maga-card textarea {
+  display:block; width:100%; box-sizing:border-box;
+  padding:13px; border-radius:10px;
+  border:1px solid #1a2b40;
+  background:#03070d; color:white;
+  font-size:14px; outline:none;
+}
+.maga-card input:focus,
+.maga-card select:focus,
+.maga-card textarea:focus {
+  border-color:#168cff;
+}
+.maga-card textarea {
+  min-height:75px; resize:vertical;
+}
+.maga-total {
+  display:flex; justify-content:space-between;
+  align-items:center; gap:10px;
+  padding:15px; margin:20px 0;
+  border-radius:11px; background:#030912;
+}
+.maga-total strong {color:#35aaff}
+.maga-pay {
+  width:100%; padding:15px;
+  border:0; border-radius:11px;
+  color:white; font-size:14px;
+  font-weight:bold; cursor:pointer;
+  background:linear-gradient(100deg,#087cff,#00baff);
+}
+.maga-demo {
+  padding:17px; margin:18px 0;
+  border:1px solid #26384b; border-radius:12px;
+  background:#030912; color:#b8c6d7;
+  font-size:13px; line-height:1.6; text-align:center;
+}
+.maga-center {text-align:center}
+</style>
+
 <script>
+let magaOrderAmount = 0;
 
-let count = 1;
-
-function plus(){
-  count++;
-  document.getElementById("count").innerText = count;
+function openCheckout(amount) {
+  magaOrderAmount = Number(amount) || 0;
+  document.getElementById("magaTotal").textContent =
+    magaOrderAmount.toFixed(2) + " AZN";
+  document.getElementById("magaCheckout").style.display = "block";
+  document.body.style.overflow = "hidden";
 }
 
-function minus(){
-  if(count > 1){
-    count--;
+function magaClose(id) {
+  document.getElementById(id).style.display = "none";
+  const checkoutOpen =
+    document.getElementById("magaCheckout").style.display === "block";
+  const paymentOpen =
+    document.getElementById("magaPayment").style.display === "block";
+  if (!checkoutOpen && !paymentOpen) {
+    document.body.style.overflow = "";
   }
-
-  document.getElementById("count").innerText = count;
 }
 
-function addCart(){
+document.getElementById("magaForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-  let message = document.getElementById("message");
+  document.getElementById("magaPayTotal").textContent =
+    magaOrderAmount.toFixed(2) + " AZN";
 
-  message.style.display = "block";
-
-  message.innerText =
-    "🛒 Məhsul səbətə əlavə edildi — " +
-    count +
-    " ədəd.";
-
-}
-
-function buyNow(){
-
-  let message = document.getElementById("message");
-
-  message.style.display = "block";
-
-  message.innerText =
-    "Ödəniş sistemi hazırda demo rejimindədir.";
-
-}
-
+  document.getElementById("magaCheckout").style.display = "none";
+  document.getElementById("magaPayment").style.display = "block";
+});
 </script>
-
-</body>
-</html>
