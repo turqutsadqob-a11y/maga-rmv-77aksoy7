@@ -8,178 +8,94 @@
 <style>
 *{box-sizing:border-box}
 body{
- margin:0;background:#050811;color:#fff;
- font-family:Arial,sans-serif
+  margin:0;
+  background:#050811;
+  color:white;
+  font-family:Arial,sans-serif;
 }
 header{
- padding:22px 16px;text-align:center;
- background:#090f1d;border-bottom:1px solid #123b60
+  background:#0b1220;
+  border-bottom:2px solid #00bfff;
+  padding:25px 12px;
+  text-align:center;
 }
-.logo{font-size:30px;font-weight:900;color:#22c8ff}
-header p{color:#9bb0c7;font-size:12px}
-nav{display:flex;justify-content:center;gap:18px;
- padding:14px;background:#080d17;flex-wrap:wrap}
-a{color:#35caff;text-decoration:none}
-.hero{text-align:center;padding:35px 18px}
-.hero h1{font-size:27px}
-.hero p{color:#aab9ca;line-height:1.6}
-.btn{
- display:inline-block;padding:13px 20px;
- border-radius:9px;background:#087cf0;
- color:white;font-weight:bold;margin-top:10px
-}
-.container{padding:18px;max-width:850px;margin:auto}
-h2{font-size:21px;border-left:3px solid #21c8ff;
- padding-left:10px}
-.grid{display:grid;grid-template-columns:
- repeat(auto-fit,minmax(145px,1fr));gap:12px}
+h1{color:#20cfff;margin:0;font-size:32px}
+header p{color:#9db4cc;font-size:12px}
+main{max-width:750px;margin:auto;padding:18px}
 .card{
- background:#0c1423;border:1px solid #1b304a;
- border-radius:12px;padding:15px
+  background:#0c1627;
+  border:1px solid #1d3b58;
+  border-radius:14px;
+  padding:18px;
+  margin:16px 0;
 }
-.card h3{color:#42ceff;margin-top:5px}
-.card p{font-size:13px;color:#b5c2d2;line-height:1.5}
-.tag{font-size:11px;color:#64e2b7}
-.video{
- background:#050a12;border:1px dashed #254968;
- border-radius:8px;padding:22px 8px;text-align:center;
- color:#a9c5da;margin:10px 0
+h2{color:#35caff}
+p{line-height:1.6;color:#d0d9e5}
+.btn{
+  display:block;
+  text-align:center;
+  background:#087cf0;
+  color:white;
+  text-decoration:none;
+  padding:14px;
+  border-radius:9px;
+  font-weight:bold;
+  margin-top:15px;
 }
-input,textarea{
- width:100%;padding:13px;margin:7px 0;
- border-radius:8px;border:1px solid #233b56;
- background:#080e19;color:white
+.item{
+  background:#101d30;
+  padding:13px;
+  margin:10px 0;
+  border-radius:8px;
 }
-button{
- padding:12px 16px;background:#087cf0;
- color:white;border:0;border-radius:8px;font-weight:bold
-}
-.comment{
- background:#101a2a;padding:12px;
- margin:10px 0;border-radius:8px;overflow-wrap:anywhere
-}
-footer{text-align:center;padding:25px;color:#8295ac;
- font-size:12px;background:#080d17;margin-top:25px}
+footer{text-align:center;padding:25px;color:#8fa5bd}
 </style>
 </head>
 <body>
 
 <header>
- <div class="logo">👑 MAGA STORE</div>
- <p>PUBG MOBILE • GAMING • VIDEO CENTER</p>
+  <h1>👑 MAGA STORE</h1>
+  <p>PUBG MOBILE GAMING CENTER</p>
 </header>
 
-<nav>
- <a href="#home">Ana səhifə</a>
- <a href="#products">Kataloq</a>
- <a href="#videos">Videolar</a>
- <a href="#comments">Rəylər</a>
-</nav>
+<main>
+  <section class="card">
+    <h2>Xoş gəlmisən!</h2>
+    <p>PUBG Mobile videoları, oyun bələdçiləri
+    və gaming yenilikləri bir yerdə.</p>
+    <a class="btn"
+       href="https://t.me/Magatg1"
+       target="_blank">
+       TELEGRAM: @Magatg1
+    </a>
+  </section>
 
-<section class="hero" id="home">
- <h1>MAGA STORE-a xoş gəlmisən</h1>
- <p>PUBG Mobile üçün video nümayişləri,
- oyun bələdçiləri və gaming materialları.</p>
- <a class="btn" href="https://t.me/Magatg1"
- target="_blank">✈ Telegram ilə əlaqə</a>
-</section>
+  <section class="card">
+    <h2>Video və kateqoriyalar</h2>
+    <div class="item">🎬 ESP — video nümayişləri</div>
+    <div class="item">🎯 Aim — nişanalma təlimləri</div>
+    <div class="item">⚙️ No Recoil — həssaslıq bələdçisi</div>
+    <div class="item">📱 Android — 32-bit / 64-bit məlumatları</div>
+  </section>
 
-<main class="container">
- <section id="products">
-  <h2>Gaming kataloqu</h2>
-  <div class="grid">
-   <div class="card">
-    <div class="tag">VIDEO BƏLƏDÇİ</div>
-    <h3>ESP nümayişi</h3>
-    <p>Oyundakı vizual məlumatların nümayiş videosu.</p>
-    <a href="#videos">Videolara bax ↓</a>
-   </div>
-   <div class="card">
-    <div class="tag">TƏLİM</div>
-    <h3>Aim məşqi</h3>
-    <p>Nişanalma bacarığını inkişaf etdirmək üçün.</p>
-    <a href="#videos">Videolara bax ↓</a>
-   </div>
-   <div class="card">
-    <div class="tag">BƏLƏDÇİ</div>
-    <h3>No Recoil</h3>
-    <p>Silah geri təpməsi və həssaslıq barədə təlim.</p>
-    <a href="#videos">Videolara bax ↓</a>
-   </div>
-   <div class="card">
-    <div class="tag">MƏLUMAT</div>
-    <h3>32-bit / 64-bit</h3>
-    <p>Android arxitekturası və oyun uyğunluğu haqqında.</p>
-    <a href="#videos">Ətraflı bax ↓</a>
-   </div>
-  </div>
- </section>
+  <section class="card">
+    <h2>Bizimlə əlaqə</h2>
+    <p>Məlumat və suallar üçün Telegram vasitəsilə yaz.</p>
+    <a class="btn"
+       href="https://t.me/Magatg1"
+       target="_blank">
+       ✈ MƏNƏ TELEGRAMDA YAZ
+    </a>
+  </section>
 
- <section id="videos">
-  <h2>Video qalereyası</h2>
-  <div class="card">
-   <h3>PUBG Mobile video nümayişləri</h3>
-   <div class="video">▶ Video 1 — buraya öz videonun linkini əlavə et</div>
-   <div class="video">▶ Video 2 — buraya öz videonun linkini əlavə et</div>
-   <p>Videoların yerinə özünə məxsus, icazəli
-   YouTube və ya digər video linklərini əlavə et.</p>
-  </div>
- </section>
-
- <section>
-  <h2>Əlaqə və məlumat</h2>
-  <div class="card">
-   <p>Sualların və məhsul barədə məlumat üçün Telegram-da yaz.</p>
-   <a class="btn" href="https://t.me/Magatg1"
-   target="_blank">Telegram: @Magatg1</a>
-  </div>
- </section>
-
- <section id="comments">
-  <h2>İstifadəçi rəyləri</h2>
-  <div class="card">
-   <p>Rəyini yaz:</p>
-   <input id="name" placeholder="Adın">
-   <textarea id="message" placeholder="Şərhin..."
-   rows="3"></textarea>
-   <button onclick="addComment()">Rəy əlavə et</button>
-   <div id="notice" style="color:#ffbd69;font-size:12px"></div>
-   <div id="commentList"></div>
-   <p style="font-size:12px">
-    Qeyd: bu demo rəyləri yalnız cari səhifədə saxlayır.
-    Hamının rəyləri görməsi üçün server və ya məlumat bazası lazımdır.
-   </p>
-  </div>
- </section>
+  <section class="card">
+    <h2>Sayt haqqında</h2>
+    <p>MAGA STORE müstəqil gaming layihəsidir.
+    PUBG MOBILE ilə rəsmi əlaqəsi yoxdur.</p>
+  </section>
 </main>
 
-<footer>
- MAGA STORE © 2026<br>
- Müstəqil fan layihəsi; PUBG MOBILE ilə rəsmi əlaqəsi yoxdur.
-</footer>
-
-<script>
-function addComment(){
- const name=document.getElementById('name').value.trim();
- const msg=document.getElementById('message').value.trim();
- const notice=document.getElementById('notice');
- if(!name||!msg){
-  notice.textContent='Adını və rəyini yaz.';
-  return;
- }
- const item=document.createElement('div');
- item.className='comment';
- const title=document.createElement('b');
- title.textContent=name;
- const body=document.createElement('p');
- body.textContent=msg;
- item.append(title,body);
- document.getElementById('commentList').prepend(item);
- document.getElementById('name').value='';
- document.getElementById('message').value='';
- notice.textContent='';
-}
-</script>
+<footer>MAGA STORE © 2026</footer>
 
 </body>
 </html>
