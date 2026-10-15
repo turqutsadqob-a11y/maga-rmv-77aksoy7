@@ -1,130 +1,159 @@
-
 <!DOCTYPE html>
 <html lang="az">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>VASSAB GLOBAL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VASSAB Business</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#07110d;color:#f1fff7;font-family:Arial,sans-serif}
-header{height:70px;background:#0b1b14;border-bottom:1px solid #174b31;display:flex;align-items:center;justify-content:space-between;padding:0 18px}
-.logo{font-size:25px;font-weight:900;color:#35e58b;letter-spacing:2px}
-.status{font-size:11px;color:#79cba0}
-main{max-width:650px;margin:auto;padding:18px}
-.panel{background:#0c1c14;border:1px solid #1a422e;border-radius:17px;padding:18px;margin-bottom:16px}
-h2{margin:0 0 8px;font-size:21px}
-.muted{color:#8eae9b;font-size:13px;line-height:1.6}
-input{width:100%;padding:14px;background:#06110b;color:white;border:1px solid #28543b;border-radius:10px;margin:7px 0;font-size:15px;outline:none}
-button{border:0;border-radius:10px;background:#24d879;color:#062112;font-weight:bold;padding:13px;cursor:pointer}
-.wide{width:100%;margin-top:8px}
-.secondary{background:#163a27;color:#d7ffe5}
-.tabs{display:flex;gap:8px;margin-bottom:15px}
-.tabs button{flex:1}
-#chat{height:300px;overflow:auto;background:#07130c;border:1px solid #1a422e;border-radius:12px;padding:12px;margin:12px 0}
-.bubble{background:#123522;padding:10px 12px;border-radius:12px;margin:8px 0;overflow-wrap:anywhere}
-.bubble small{display:block;color:#69e8a1;margin-bottom:5px}
-.send{display:flex;gap:7px}
-.send input{min-width:0;flex:1}
-#app{display:none}
-#notice{font-size:13px;color:#ffd27b;line-height:1.5;margin-top:10px}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f7f6;color:#202c33}
+header{background:#075e54;color:white;padding:18px}
+header h1{margin:0;font-size:25px}
+header p{margin:5px 0 0;font-size:13px;color:#d6f5ec}
+nav{display:flex;overflow-x:auto;background:white;border-bottom:1px solid #ddd}
+nav button{flex:1;min-width:90px;padding:14px 8px;border:0;background:white;color:#54656f;font-weight:bold}
+nav button.active{color:#008069;border-bottom:3px solid #008069}
+main{max-width:650px;margin:auto;padding:15px}
+.panel{display:none;background:white;border-radius:14px;padding:18px;margin-bottom:14px;box-shadow:0 2px 9px #0000000a}
+.panel.active{display:block}
+h2{margin-top:0;font-size:21px}
+input,textarea,select{width:100%;padding:13px;margin:7px 0;border:1px solid #d5dedb;border-radius:9px;font-size:15px}
+.btn{width:100%;padding:13px;background:#008069;color:white;border:0;border-radius:9px;font-weight:bold;margin-top:8px;font-size:15px}
+.item{padding:13px 0;border-bottom:1px solid #eee}
+.small{color:#667781;font-size:13px}
+.avatar{width:65px;height:65px;border-radius:50%;background:#d9fdd3;display:grid;place-items:center;font-size:30px;margin-bottom:12px}
+.chatbox{height:240px;overflow:auto;background:#efeae2;padding:12px;border-radius:10px;margin:10px 0}
+.msg{background:#d9fdd3;padding:10px;border-radius:9px;margin:7px 0;overflow-wrap:anywhere}
+footer{text-align:center;color:#77858c;padding:20px;font-size:12px}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">VASSAB</div>
-  <div class="status">GLOBAL COMMUNITY</div>
+<h1>VASSAB Business</h1>
+<p>Biznesini idarə et, müştərilərinlə əlaqə saxla</p>
 </header>
 
+<nav>
+<button class="active" onclick="showPage('home',this)">Ana səhifə</button>
+<button onclick="showPage('chats',this)">Söhbətlər</button>
+<button onclick="showPage('catalog',this)">Kataloq</button>
+<button onclick="showPage('orders',this)">Sifarişlər</button>
+<button onclick="showPage('profile',this)">Profil</button>
+</nav>
+
 <main>
-  <section class="panel" id="welcome">
-    <h2>Dünyaya qoşul 🌍</h2>
-    <p class="muted">VASSAB Global — insanlarla tanış, söhbət et və fikirlərini paylaş.</p>
-    <input id="username" maxlength="24" placeholder="İstifadəçi adın">
-    <button class="wide" id="enter">ÇATA DAXİL OL</button>
-    <p class="muted">Bu ilkin nümayiş versiyasıdır. Real qlobal mesajlaşma üçün onlayn server qoşulmalıdır.</p>
-  </section>
+<section id="home" class="panel active">
+<h2>Xoş gəlmisən! 👋</h2>
+<p>VASSAB Business idarəetmə paneli</p>
+<div class="item">💬 <b>Söhbətlər</b><p class="small">Mesajlarını bu bölmədə yaz.</p></div>
+<div class="item">🛍️ <b>Məhsul kataloqu</b><p class="small">Məhsullarını və qiymətlərini əlavə et.</p></div>
+<div class="item">📦 <b>Sifarişlər</b><p class="small">Sifarişlərini qeyd et və idarə et.</p></div>
+<div class="item">🏢 <b>Biznes profili</b><p class="small">Biznes məlumatlarını yenilə.</p></div>
+</section>
 
-  <section id="app">
-    <div class="panel">
-      <h2>Salam, <span id="name"></span>!</h2>
-      <p class="muted">VASSAB Global çatına xoş gəldin.</p>
-      <div class="tabs">
-        <button id="globalTab">🌍 Qlobal çat</button>
-        <button class="secondary" id="exit">Çıxış</button>
-      </div>
-      <div id="chat" aria-live="polite">
-        <p class="muted">Söhbət ekranı hazırdır. Real mesajların hamıya çatması üçün server bağlantısı lazımdır.</p>
-      </div>
-      <form id="sendForm">
-        <div class="send">
-          <input id="message" maxlength="500" placeholder="Mesaj yaz..." autocomplete="off" required>
-          <button type="submit">➤</button>
-        </div>
-      </form>
-      <div id="notice"></div>
-    </div>
-  </section>
+<section id="chats" class="panel">
+<h2>💬 Söhbətlər</h2>
+<p class="small">Bu ilkin versiyada mesajlar yalnız bu brauzerdə görünür.</p>
+<input id="chatName" placeholder="Adın">
+<div id="chatbox" class="chatbox"></div>
+<form id="chatForm">
+<input id="message" placeholder="Mesajını yaz..." required>
+<button class="btn" type="submit">Mesajı yaz</button>
+</form>
+</section>
 
-  <section class="panel">
-    <h2>VASSAB haqqında</h2>
-    <p class="muted">Bir dünya. Bir söhbət. Hamı üçün ünsiyyət.</p>
-    <p class="muted">Gələcək planlar: şəxsi mesajlar, profillər, dillər və canlı qlobal çat.</p>
-  </section>
+<section id="catalog" class="panel">
+<h2>🛍️ Məhsul kataloqu</h2>
+<form id="productForm">
+<input id="productName" placeholder="Məhsulun adı" required>
+<input id="productPrice" type="number" min="0" step="0.01" placeholder="Qiymət (AZN)" required>
+<textarea id="productDesc" placeholder="Məhsul haqqında məlumat"></textarea>
+<button class="btn">Məhsul əlavə et</button>
+</form>
+<div id="products"></div>
+</section>
+
+<section id="orders" class="panel">
+<h2>📦 Sifarişlər</h2>
+<form id="orderForm">
+<input id="customerName" placeholder="Müştərinin adı" required>
+<input id="customerContact" placeholder="Əlaqə məlumatı">
+<input id="orderDetails" placeholder="Sifarişin detalları" required>
+<button class="btn">Sifarişi qeyd et</button>
+</form>
+<div id="orderList"></div>
+</section>
+
+<section id="profile" class="panel">
+<h2>🏢 Biznes profili</h2>
+<div class="avatar">🏪</div>
+<form id="profileForm">
+<input id="businessName" placeholder="Biznesin adı" value="VASSAB Business" required>
+<textarea id="businessInfo" placeholder="Biznes haqqında məlumat"></textarea>
+<input id="businessPhone" placeholder="Biznes telefonu">
+<input id="businessHours" placeholder="İş saatları">
+<button class="btn">Profili yadda saxla</button>
+</form>
+<p id="profileStatus" class="small"></p>
+</section>
 </main>
 
+<footer>VASSAB Business · İlkin versiya</footer>
+
 <script>
-const welcome=document.getElementById("welcome");
-const app=document.getElementById("app");
-const username=document.getElementById("username");
-const nameLabel=document.getElementById("name");
-const chat=document.getElementById("chat");
-const notice=document.getElementById("notice");
+function showPage(id,button){
+ document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ button.classList.add('active');
+}
 
-document.getElementById("enter").addEventListener("click",function(){
-  const n=username.value.trim();
-  if(!n){
-    alert("Əvvəl istifadəçi adını yaz!");
-    username.focus();
-    return;
-  }
-  nameLabel.textContent=n;
-  welcome.style.display="none";
-  app.style.display="block";
-  notice.textContent="Demo rejimi: mesajlar hələ başqa istifadəçilərə göndərilmir.";
+const chatbox=document.getElementById('chatbox');
+document.getElementById('chatForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const name=document.getElementById('chatName').value.trim()||'Mən';
+ const input=document.getElementById('message');
+ if(!input.value.trim())return;
+ const msg=document.createElement('div');
+ msg.className='msg';
+ msg.textContent=name+': '+input.value.trim();
+ chatbox.appendChild(msg);
+ chatbox.scrollTop=chatbox.scrollHeight;
+ input.value='';
 });
 
-document.getElementById("exit").addEventListener("click",function(){
-  app.style.display="none";
-  welcome.style.display="block";
-  username.value="";
+document.getElementById('productForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const name=document.getElementById('productName').value.trim();
+ const price=document.getElementById('productPrice').value;
+ const desc=document.getElementById('productDesc').value.trim();
+ const item=document.createElement('div');
+ item.className='item';
+ const title=document.createElement('b');
+ title.textContent=name+' — '+price+' AZN';
+ const details=document.createElement('p');
+ details.className='small';
+ details.textContent=desc;
+ item.append(title,details);
+ document.getElementById('products').appendChild(item);
+ this.reset();
 });
 
-document.getElementById("globalTab").addEventListener("click",function(){
-  notice.textContent="Qlobal çat görünüşü açıqdır. Canlı mesajlaşma üçün server bağlantısı lazımdır.";
+document.getElementById('orderForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const item=document.createElement('div');
+ item.className='item';
+ item.textContent='📦 '+document.getElementById('customerName').value+
+ ' · '+document.getElementById('orderDetails').value+
+ ' · '+(document.getElementById('customerContact').value||'Əlaqə qeyd edilməyib');
+ document.getElementById('orderList').appendChild(item);
+ this.reset();
 });
 
-document.getElementById("sendForm").addEventListener("submit",function(e){
-  e.preventDefault();
-  const field=document.getElementById("message");
-  const value=field.value.trim();
-  if(!value)return;
-
-  const bubble=document.createElement("div");
-  bubble.className="bubble";
-
-  const sender=document.createElement("small");
-  sender.textContent=nameLabel.textContent;
-
-  const content=document.createElement("div");
-  content.textContent=value;
-
-  bubble.appendChild(sender);
-  bubble.appendChild(content);
-  chat.appendChild(bubble);
-  chat.scrollTop=chat.scrollHeight;
-  field.value="";
-  notice.textContent="Mesaj yalnız bu ekranda görünür. Hələ qlobal serverə göndərilmir.";
+document.getElementById('profileForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ document.getElementById('profileStatus').textContent=
+ 'Profil bu səhifədə yeniləndi. Serverə hələ qoşulmayıb.';
 });
 </script>
 </body>
