@@ -1,1 +1,1 @@
-# maga-rmv-77aksoy7
+# maga-store_gaming
