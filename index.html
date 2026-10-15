@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#030605">
 <title>MAGA STORE</title>
 
 <style>
@@ -12,50 +13,58 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   background: #030605;
   color: #ffffff;
 }
 
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 header {
-  padding: 24px 15px;
   text-align: center;
+  padding: 25px 15px;
   background: #080d0a;
-  border-bottom: 1px solid #123c24;
+  border-bottom: 1px solid #17472a;
 }
 
 .logo {
+  color: #00ff73;
   font-size: 34px;
   font-weight: 900;
-  color: #00ff73;
   letter-spacing: 3px;
   text-shadow: 0 0 15px #00c853;
 }
 
 .subtitle {
   color: #a0b5a7;
-  margin-top: 8px;
   font-size: 12px;
+  margin-top: 8px;
   letter-spacing: 2px;
 }
 
 nav {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  justify-content: center;
+  gap: 9px;
   padding: 15px 10px;
   background: #050906;
 }
 
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  padding: 10px 14px;
+  padding: 10px 13px;
   border: 1px solid #16472a;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 nav a:hover {
@@ -65,54 +74,56 @@ nav a:hover {
 
 .hero {
   text-align: center;
-  padding: 45px 18px;
+  padding: 55px 18px;
   background: radial-gradient(ellipse at top, #10351d, #030605 75%);
 }
 
 .hero h1 {
-  font-size: 30px;
-  margin-bottom: 15px;
+  font-size: clamp(25px, 6vw, 38px);
+  margin-bottom: 17px;
 }
 
-.hero h1 span {
+.green {
   color: #00ff73;
 }
 
-.hero p {
-  max-width: 500px;
-  margin: auto;
+.hero p,
+.contact p,
+.video-section p {
+  max-width: 520px;
+  margin: 0 auto;
   color: #bdc9c0;
-  line-height: 1.7;
+  line-height: 1.8;
+  font-size: 14px;
 }
 
 .button {
   display: inline-block;
   margin-top: 22px;
-  padding: 14px 24px;
+  padding: 14px 23px;
   background: #00d85b;
   color: #001b0a;
+  font-size: 13px;
   font-weight: bold;
   text-decoration: none;
   border-radius: 10px;
-  box-shadow: 0 0 15px #00a84455;
+  box-shadow: 0 0 15px #00a84444;
+  transition: 0.2s;
 }
 
 .button:hover {
   background: #00ff73;
+  transform: translateY(-2px);
 }
 
 section {
-  padding: 30px 16px;
+  padding: 38px 16px;
 }
 
 .section-title {
   text-align: center;
-  font-size: 23px;
-  margin-bottom: 25px;
-}
-
-.section-title span {
-  color: #00ff73;
+  font-size: 24px;
+  margin-bottom: 27px;
 }
 
 .cards {
@@ -124,28 +135,28 @@ section {
 }
 
 .card {
+  padding: 25px 18px;
+  text-align: center;
   background: #080f0a;
   border: 1px solid #17472a;
   border-radius: 15px;
-  padding: 24px 18px;
-  text-align: center;
   box-shadow: 0 0 18px #001c0b55;
 }
 
-.card .emoji {
-  font-size: 35px;
-  margin-bottom: 14px;
+.emoji {
+  font-size: 36px;
+  margin-bottom: 15px;
 }
 
 .card h3 {
   color: #00ff73;
-  margin-bottom: 12px;
+  margin-bottom: 13px;
 }
 
 .card p {
   color: #b8c7bc;
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .video-section {
@@ -155,25 +166,72 @@ section {
   border-bottom: 1px solid #102d1a;
 }
 
-.video-section p,
-.contact p {
-  color: #bdc9c0;
-  line-height: 1.7;
-  max-width: 550px;
-  margin: auto;
-}
-
 .contact {
   text-align: center;
+  padding: 42px 16px 20px;
+  background: radial-gradient(ellipse at top, #0b2112, #030605 75%);
+  border-top: 1px solid #17472a;
 }
 
-footer {
-  text-align: center;
-  padding: 22px 12px;
-  color: #718078;
+.contact h2 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.contact p {
+  margin-bottom: 12px;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.contact-links .button {
+  margin: 0;
+}
+
+.chat-button {
+  background: #09130c;
+  border: 1px solid #00c853;
+  color: #00ff73;
+}
+
+.footer {
+  margin-top: 38px;
+  padding: 25px 10px 8px;
+  border-top: 1px solid #173521;
+}
+
+.footer-logo {
+  color: #00ff73;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.footer p {
+  color: #829187;
   font-size: 12px;
-  background: #050805;
-  border-top: 1px solid #12351e;
+  margin: 7px auto;
+}
+
+@media (max-width: 400px) {
+  .logo {
+    font-size: 29px;
+  }
+
+  nav a {
+    padding: 9px 10px;
+  }
+
+  .hero {
+    padding: 42px 15px;
+  }
 }
 </style>
 </head>
@@ -193,32 +251,39 @@ footer {
 </nav>
 
 <main>
+
   <div class="hero" id="home">
-    <h1>WELCOME TO <span>MAGA STORE</span></h1>
+    <h1>WELCOME TO <span class="green">MAGA STORE</span></h1>
+
     <p>
       MAGA STORE dünyasına xoş gəlmisən!
-      Oyun xəbərləri, gaming məzmunu və icmamızla
-      bir yerdə ol.
+      PUBG MOBILE yenilikləri, gaming videoları
+      və icmamızla bir yerdə ol.
     </p>
+
     <a class="button"
        href="https://t.me/MaqaStoreteam"
        target="_blank"
        rel="noopener noreferrer">
-      TELEGRAM KANALI
+      ✈ TELEGRAM KANALI
     </a>
   </div>
 
   <section id="services">
-    <h2 class="section-title">MAGA <span>XİDMƏTLƏRİ</span></h2>
+    <h2 class="section-title">
+      MAGA <span class="green">XİDMƏTLƏRİ</span>
+    </h2>
 
     <div class="cards">
+
       <div class="card">
         <div class="emoji">🎮</div>
         <h3>PUBG MOBILE</h3>
         <p>
-          PUBG MOBILE ilə bağlı yeniliklər,
-          oyun məzmunu və məlumatlar.
+          PUBG MOBILE oyun xəbərləri,
+          yeniliklər və oyun məzmunu.
         </p>
+
         <a class="button"
            href="https://t.me/MaqaStoreteam"
            target="_blank"
@@ -231,9 +296,10 @@ footer {
         <div class="emoji">🔥</div>
         <h3>MAGA COMMUNITY</h3>
         <p>
-          İcmamıza qoşul, yenilikləri izlə
-          və gaming söhbətlərində iştirak et.
+          İcmamıza qoşul və gaming
+          paylaşımlarını izləməyə başla.
         </p>
+
         <a class="button"
            href="https://t.me/MaqaStoreteam"
            target="_blank"
@@ -246,9 +312,10 @@ footer {
         <div class="emoji">🎬</div>
         <h3>CHAT VİDEOLARI</h3>
         <p>
-          Oyun videoları və kanalımızda
-          paylaşılan məzmunlarla tanış ol.
+          Oyun videoları və Telegram
+          kanalında olan paylaşımlar.
         </p>
+
         <a class="button"
            href="https://t.me/geneltemabakiye1"
            target="_blank"
@@ -256,15 +323,19 @@ footer {
           VİDEOLARA BAX
         </a>
       </div>
+
     </div>
   </section>
 
   <section class="video-section" id="videos">
-    <h2 class="section-title">VIDEO <span>ZONE</span></h2>
+    <h2 class="section-title">
+      VIDEO <span class="green">ZONE</span>
+    </h2>
+
     <p>
-      Videolar və digər paylaşımlar üçün
-      Telegram kanalımıza keç.
+      Videolar və paylaşımlar üçün Telegram kanalına keç.
     </p>
+
     <a class="button"
        href="https://t.me/geneltemabakiye1"
        target="_blank"
@@ -274,23 +345,39 @@ footer {
   </section>
 
   <section class="contact" id="contact">
-    <h2 class="section-title">BİZİMLƏ <span>ƏLAQƏ</span></h2>
-    <p>
-      Sualların və təkliflərin varsa,
-      Telegram kanalımızdan bizə qoşula bilərsən.
-    </p>
-    <a class="button"
-       href="https://t.me/MaqaStoreteam"
-       target="_blank"
-       rel="noopener noreferrer">
-      TELEGRAM
-    </a>
-  </section>
-</main>
+    <h2>
+      <span class="green">MAGA</span> İLƏ ƏLAQƏ
+    </h2>
 
-<footer>
-  © 2026 MAGA STORE • BÜTÜN HÜQUQLAR QORUNUR
-</footer>
+    <p>
+      Yeniliklər, paylaşımlar və məlumatlar üçün
+      Telegram kanallarımıza qoşul!
+    </p>
+
+    <div class="contact-links">
+      <a class="button"
+         href="https://t.me/MaqaStoreteam"
+         target="_blank"
+         rel="noopener noreferrer">
+        ✈ TELEGRAM KANALI
+      </a>
+
+      <a class="button chat-button"
+         href="https://t.me/geneltemabakiye1"
+         target="_blank"
+         rel="noopener noreferrer">
+        CHAT KANALI
+      </a>
+    </div>
+
+    <div class="footer">
+      <div class="footer-logo">MAGA STORE</div>
+      <p>GAMING COMMUNITY</p>
+      <p>© 2026 MAGA STORE</p>
+    </div>
+  </section>
+
+</main>
 
 </body>
 </html>
