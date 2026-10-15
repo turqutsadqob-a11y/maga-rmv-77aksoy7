@@ -3,229 +3,129 @@
 <html lang="az">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAGA</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VASSAB GLOBAL</title>
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background: #030509;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
-.card {
-  width: 100%;
-  max-width: 380px;
-  padding: 30px 24px;
-  background: #080d15;
-  border: 1px solid #123e5c;
-  border-radius: 20px;
-  box-shadow: 0 0 30px #0077ff20;
-  text-align: center;
-}
-
-.logo {
-  color: #16baff;
-  font-size: 42px;
-  font-weight: 900;
-  letter-spacing: 5px;
-  margin-bottom: 8px;
-  text-shadow: 0 0 20px #009dff80;
-}
-
-.subtitle {
-  color: #8295aa;
-  font-size: 12px;
-  letter-spacing: 3px;
-  margin-bottom: 30px;
-}
-
-h2 {
-  font-size: 20px;
-  margin-bottom: 24px;
-}
-
-input {
-  width: 100%;
-  padding: 15px;
-  margin: 8px 0;
-  border-radius: 10px;
-  border: 1px solid #20384e;
-  background: #030810;
-  color: white;
-  font-size: 15px;
-  outline: none;
-}
-
-input:focus {
-  border-color: #12aaff;
-}
-
-button {
-  width: 100%;
-  padding: 15px;
-  margin-top: 12px;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #087bff, #12c5ff);
-  color: white;
-  font-weight: bold;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-button:active {
-  opacity: 0.75;
-}
-
-.secondary {
-  background: #101b29;
-  border: 1px solid #23445f;
-}
-
-.message {
-  display: none;
-  margin-top: 18px;
-  padding: 12px;
-  border-radius: 9px;
-  background: #101b29;
-  color: #70d7ff;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.footer {
-  margin-top: 24px;
-  font-size: 11px;
-  color: #65788d;
-}
+*{box-sizing:border-box}
+body{margin:0;background:#07110d;color:#f1fff7;font-family:Arial,sans-serif}
+header{height:70px;background:#0b1b14;border-bottom:1px solid #174b31;display:flex;align-items:center;justify-content:space-between;padding:0 18px}
+.logo{font-size:25px;font-weight:900;color:#35e58b;letter-spacing:2px}
+.status{font-size:11px;color:#79cba0}
+main{max-width:650px;margin:auto;padding:18px}
+.panel{background:#0c1c14;border:1px solid #1a422e;border-radius:17px;padding:18px;margin-bottom:16px}
+h2{margin:0 0 8px;font-size:21px}
+.muted{color:#8eae9b;font-size:13px;line-height:1.6}
+input{width:100%;padding:14px;background:#06110b;color:white;border:1px solid #28543b;border-radius:10px;margin:7px 0;font-size:15px;outline:none}
+button{border:0;border-radius:10px;background:#24d879;color:#062112;font-weight:bold;padding:13px;cursor:pointer}
+.wide{width:100%;margin-top:8px}
+.secondary{background:#163a27;color:#d7ffe5}
+.tabs{display:flex;gap:8px;margin-bottom:15px}
+.tabs button{flex:1}
+#chat{height:300px;overflow:auto;background:#07130c;border:1px solid #1a422e;border-radius:12px;padding:12px;margin:12px 0}
+.bubble{background:#123522;padding:10px 12px;border-radius:12px;margin:8px 0;overflow-wrap:anywhere}
+.bubble small{display:block;color:#69e8a1;margin-bottom:5px}
+.send{display:flex;gap:7px}
+.send input{min-width:0;flex:1}
+#app{display:none}
+#notice{font-size:13px;color:#ffd27b;line-height:1.5;margin-top:10px}
 </style>
 </head>
-
 <body>
+<header>
+  <div class="logo">VASSAB</div>
+  <div class="status">GLOBAL COMMUNITY</div>
+</header>
 
-<div class="card">
-  <div class="logo">MAGA</div>
-  <div class="subtitle">SECURE CHANNEL</div>
-
-  <section id="loginScreen">
-    <h2>Hesaba giriş</h2>
-
-    <form id="loginForm">
-      <input
-        id="email"
-        type="email"
-        placeholder="Gmail ünvanın"
-        autocomplete="email"
-        required
-      >
-
-      <input
-        id="password"
-        type="password"
-        placeholder="Şifrən"
-        autocomplete="current-password"
-        required
-      >
-
-      <button type="submit">LOGIN</button>
-    </form>
-
-    <button type="button" class="secondary" id="showRegister">
-      QEYDİYYAT
-    </button>
+<main>
+  <section class="panel" id="welcome">
+    <h2>Dünyaya qoşul 🌍</h2>
+    <p class="muted">VASSAB Global — insanlarla tanış, söhbət et və fikirlərini paylaş.</p>
+    <input id="username" maxlength="24" placeholder="İstifadəçi adın">
+    <button class="wide" id="enter">ÇATA DAXİL OL</button>
+    <p class="muted">Bu ilkin nümayiş versiyasıdır. Real qlobal mesajlaşma üçün onlayn server qoşulmalıdır.</p>
   </section>
 
-  <section id="registerScreen" hidden>
-    <h2>Yeni hesab</h2>
-
-    <form id="registerForm">
-      <input
-        id="fullName"
-        type="text"
-        placeholder="Ad və soyad"
-        autocomplete="name"
-        required
-      >
-
-      <input
-        id="regEmail"
-        type="email"
-        placeholder="Gmail ünvanın"
-        autocomplete="email"
-        required
-      >
-
-      <input
-        id="regPassword"
-        type="password"
-        placeholder="Şifrə yarat"
-        autocomplete="new-password"
-        minlength="8"
-        required
-      >
-
-      <button type="submit">HESAB YARAT</button>
-    </form>
-
-    <button type="button" class="secondary" id="showLogin">
-      GİRİŞƏ QAYIT
-    </button>
+  <section id="app">
+    <div class="panel">
+      <h2>Salam, <span id="name"></span>!</h2>
+      <p class="muted">VASSAB Global çatına xoş gəldin.</p>
+      <div class="tabs">
+        <button id="globalTab">🌍 Qlobal çat</button>
+        <button class="secondary" id="exit">Çıxış</button>
+      </div>
+      <div id="chat" aria-live="polite">
+        <p class="muted">Söhbət ekranı hazırdır. Real mesajların hamıya çatması üçün server bağlantısı lazımdır.</p>
+      </div>
+      <form id="sendForm">
+        <div class="send">
+          <input id="message" maxlength="500" placeholder="Mesaj yaz..." autocomplete="off" required>
+          <button type="submit">➤</button>
+        </div>
+      </form>
+      <div id="notice"></div>
+    </div>
   </section>
 
-  <div id="message" class="message" role="status"></div>
-
-  <div class="footer">MAGA © 2026</div>
-</div>
+  <section class="panel">
+    <h2>VASSAB haqqında</h2>
+    <p class="muted">Bir dünya. Bir söhbət. Hamı üçün ünsiyyət.</p>
+    <p class="muted">Gələcək planlar: şəxsi mesajlar, profillər, dillər və canlı qlobal çat.</p>
+  </section>
+</main>
 
 <script>
-const loginScreen = document.getElementById("loginScreen");
-const registerScreen = document.getElementById("registerScreen");
-const message = document.getElementById("message");
+const welcome=document.getElementById("welcome");
+const app=document.getElementById("app");
+const username=document.getElementById("username");
+const nameLabel=document.getElementById("name");
+const chat=document.getElementById("chat");
+const notice=document.getElementById("notice");
 
-function showMessage(text) {
-  message.textContent = text;
-  message.style.display = "block";
-}
-
-document.getElementById("showRegister").addEventListener("click", function () {
-  loginScreen.hidden = true;
-  registerScreen.hidden = false;
-  message.style.display = "none";
+document.getElementById("enter").addEventListener("click",function(){
+  const n=username.value.trim();
+  if(!n){
+    alert("Əvvəl istifadəçi adını yaz!");
+    username.focus();
+    return;
+  }
+  nameLabel.textContent=n;
+  welcome.style.display="none";
+  app.style.display="block";
+  notice.textContent="Demo rejimi: mesajlar hələ başqa istifadəçilərə göndərilmir.";
 });
 
-document.getElementById("showLogin").addEventListener("click", function () {
-  registerScreen.hidden = true;
-  loginScreen.hidden = false;
-  message.style.display = "none";
+document.getElementById("exit").addEventListener("click",function(){
+  app.style.display="none";
+  welcome.style.display="block";
+  username.value="";
 });
 
-document.getElementById("loginForm").addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  showMessage(
-    "Düymə işləyir. Həqiqi giriş üçün təhlükəsiz hesab sistemi qoşulmalıdır."
-  );
+document.getElementById("globalTab").addEventListener("click",function(){
+  notice.textContent="Qlobal çat görünüşü açıqdır. Canlı mesajlaşma üçün server bağlantısı lazımdır.";
 });
 
-document.getElementById("registerForm").addEventListener("submit", function (event) {
-  event.preventDefault();
+document.getElementById("sendForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  const field=document.getElementById("message");
+  const value=field.value.trim();
+  if(!value)return;
 
-  showMessage(
-    "Düymə işləyir. Hesab hələ yaradılmayıb: server sistemi qoşulmalıdır."
-  );
+  const bubble=document.createElement("div");
+  bubble.className="bubble";
+
+  const sender=document.createElement("small");
+  sender.textContent=nameLabel.textContent;
+
+  const content=document.createElement("div");
+  content.textContent=value;
+
+  bubble.appendChild(sender);
+  bubble.appendChild(content);
+  chat.appendChild(bubble);
+  chat.scrollTop=chat.scrollHeight;
+  field.value="";
+  notice.textContent="Mesaj yalnız bu ekranda görünür. Hələ qlobal serverə göndərilmir.";
 });
 </script>
-
 </body>
 </html>
