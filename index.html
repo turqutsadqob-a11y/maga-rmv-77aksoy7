@@ -6,35 +6,150 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080b08">
 <title>MAGA STORE | Gaming</title>
+
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#080b08;color:#fff;font-family:Arial,sans-serif}
-header{text-align:center;padding:24px 12px;background:#111710;border-bottom:2px solid #a6ff00}
-.logo{font-size:30px;font-weight:900;letter-spacing:4px;color:#a6ff00}
-header p{color:#b7c0b1;font-size:12px;letter-spacing:2px}
-nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;padding:15px;background:#0c100c}
-nav a{color:white;text-decoration:none;font-size:13px}
+body{
+  margin:0;
+  background:#080b08;
+  color:#fff;
+  font-family:Arial,sans-serif;
+}
+header{
+  text-align:center;
+  padding:24px 12px;
+  background:#111710;
+  border-bottom:2px solid #a6ff00;
+}
+.logo{
+  font-size:30px;
+  font-weight:900;
+  letter-spacing:4px;
+  color:#a6ff00;
+  text-shadow:0 0 12px #64a800;
+}
+header p{
+  color:#b7c0b1;
+  font-size:12px;
+  letter-spacing:2px;
+}
+nav{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  padding:15px;
+  background:#0c100c;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:13px;
+}
 nav a:hover{color:#a6ff00}
-.hero{padding:65px 18px;text-align:center;background:radial-gradient(ellipse at top,#354323,#151b12 48%,#080b08)}
-.hero h1{font-size:clamp(30px,8vw,46px);margin:0 0 16px}
+.hero{
+  padding:65px 18px;
+  text-align:center;
+  background:radial-gradient(ellipse at top,#354323,#151b12 48%,#080b08);
+}
+.hero h1{
+  font-size:clamp(30px,8vw,46px);
+  margin:0 0 16px;
+}
 .green{color:#a6ff00}
-.hero p{color:#c7cec2;line-height:1.8}
-.btn{display:inline-block;margin:8px 4px;padding:14px 20px;border-radius:5px;background:#a6ff00;color:#101500;text-decoration:none;font-weight:bold}
-.btn.alt{background:transparent;color:#a6ff00;border:1px solid #a6ff00}
-main{max-width:950px;margin:auto;padding:20px 15px}
-.heading{text-align:center;margin:30px 0;font-size:25px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.card{padding:20px;background:#111711;border:1px solid #34432c;border-radius:10px}
+.hero p{
+  color:#c7cec2;
+  line-height:1.8;
+}
+.btn{
+  display:inline-block;
+  margin:8px 4px;
+  padding:14px 20px;
+  border-radius:5px;
+  background:#a6ff00;
+  color:#101500;
+  text-decoration:none;
+  font-weight:bold;
+}
+.btn.alt{
+  background:transparent;
+  color:#a6ff00;
+  border:1px solid #a6ff00;
+}
+main{
+  max-width:950px;
+  margin:auto;
+  padding:20px 15px;
+}
+.heading{
+  text-align:center;
+  margin:30px 0;
+  font-size:25px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:16px;
+}
+.card{
+  padding:22px 18px;
+  background:#111711;
+  border:1px solid #34432c;
+  border-radius:10px;
+  text-align:center;
+}
+.symbol{
+  font-size:40px;
+}
 .card h3{color:#a6ff00}
-.card p{color:#c1c8bb;font-size:14px;line-height:1.7}
-.symbol{text-align:center;font-size:40px}
-video{display:block;width:100%;border-radius:8px;background:#000}
-.note{font-size:12px;color:#9aa392}
-.contact{margin:30px 0;padding:28px 18px;text-align:center;background:#111711;border:1px solid #40532f;border-radius:10px}
-footer{text-align:center;padding:24px 10px;color:#90998c;border-top:1px solid #263023;font-size:12px}
+.card p{
+  color:#c1c8bb;
+  font-size:14px;
+  line-height:1.7;
+}
+.video-section{
+  margin:35px 0;
+  padding:28px 16px;
+  background:#111711;
+  border:1px solid #a6ff00;
+  border-radius:12px;
+  text-align:center;
+}
+.video-section p{
+  color:#ccc;
+  line-height:1.7;
+}
+.video-btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:16px 24px;
+  background:#a6ff00;
+  color:#101500;
+  text-decoration:none;
+  font-weight:900;
+  border-radius:7px;
+  box-shadow:0 0 15px #426c19;
+}
+.video-btn:hover{background:#c0ff57}
+.contact{
+  margin:30px 0;
+  padding:25px 18px;
+  text-align:center;
+  background:#111711;
+  border:1px solid #40532f;
+  border-radius:10px;
+}
+footer{
+  text-align:center;
+  padding:24px 10px;
+  color:#90998c;
+  border-top:1px solid #263023;
+  font-size:12px;
+}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -44,74 +159,93 @@ footer{text-align:center;padding:24px 10px;color:#90998c;border-top:1px solid #2
 
 <nav>
   <a href="#home">ANA SƏHİFƏ</a>
-  <a href="#offers">TƏKLİFLƏR</a>
+  <a href="#offers">BÖLMƏLƏR</a>
   <a href="#videos">VİDEOLAR</a>
   <a href="#contact">ƏLAQƏ</a>
 </nav>
 
 <section class="hero" id="home">
   <h1>WELCOME TO <span class="green">MAGA</span></h1>
-  <p>Gaming yenilikləri, oyun videoları və maraqlı təkliflər.<br>
-  MAGA icmasına qoşul!</p>
-  <a class="btn" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener">✈ TELEGRAM KANALI</a>
+  <p>
+    Gaming yenilikləri, maraqlı videolar və elanlar.<br>
+    MAGA icmasına qoşul!
+  </p>
+
+  <a class="btn"
+     href="https://t.me/MaqaStoreteam"
+     target="_blank" rel="noopener">
+    ✈ TELEGRAM KANALI
+  </a>
+
   <a class="btn alt" href="#videos">VİDEOLARA BAX</a>
 </section>
 
 <main>
-  <h2 class="heading" id="offers">MAGA <span class="green">TƏKLİFLƏRİ</span></h2>
+
+  <h2 class="heading" id="offers">
+    MAGA <span class="green">BÖLMƏLƏRİ</span>
+  </h2>
 
   <div class="grid">
     <section class="card">
       <div class="symbol">🎮</div>
-      <h3>Gaming yenilikləri</h3>
-      <p>PUBG MOBILE yenilikləri, oyun məsləhətləri və xəbərlər.</p>
-      <a class="btn" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener">ƏTRAFLI BAX</a>
+      <h3>GAMING YENİLİKLƏRİ</h3>
+      <p>PUBG MOBILE xəbərləri, yeniliklər və oyun məsləhətləri.</p>
+      <a class="btn"
+         href="https://t.me/MaqaStoreteam"
+         target="_blank" rel="noopener">
+        KANALA KEÇ
+      </a>
     </section>
 
     <section class="card">
       <div class="symbol">💎</div>
-      <h3>Sərfəli təkliflər</h3>
-      <p>Yeni elanları və təklifləri MAGA Telegram kanalında izlə.</p>
-      <a class="btn" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener">TƏKLİFLƏRƏ BAX</a>
+      <h3>SƏRFƏLİ TƏKLİFLƏR</h3>
+      <p>Yeni elanlar və təkliflərlə Telegram kanalında tanış ol.</p>
+      <a class="btn"
+         href="https://t.me/MaqaStoreteam"
+         target="_blank" rel="noopener">
+        TƏKLİFLƏRƏ BAX
+      </a>
     </section>
 
     <section class="card">
       <div class="symbol">🛡️</div>
-      <h3>MAGA icması</h3>
-      <p>Oyun videoları və yeniliklər üçün kanalımıza qoşul.</p>
-      <a class="btn" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener">K A N A L A   Q O Ş U L</a>
+      <h3>MAGA İCMASI</h3>
+      <p>Oyun videoları və yenilikləri izləmək üçün kanalımıza qoşul.</p>
+      <a class="btn"
+         href="https://t.me/MaqaStoreteam"
+         target="_blank" rel="noopener">
+        MAGA-ya QOŞUL
+      </a>
     </section>
   </div>
 
-  <h2 class="heading" id="videos">MAGA <span class="green">VİDEOLAR</span></h2>
+  <section class="video-section" id="videos">
+    <h2 class="green">🎬 HİLE CHAT VİDEOLARI</h2>
+    <p>
+      Oyun videoları və yeni paylaşımlar üçün
+      aşağıdakı Telegram kanalına keç.
+    </p>
 
-  <div class="grid">
-    <section class="card">
-      <video controls playsinline preload="metadata">
-        <source src="maga-video.mp4" type="video/mp4">
-        Brauzer videonu aça bilmədi.
-      </video>
-      <h3>Gameplay #1</h3>
-      <p>MAGA-da maraqlı oyun anları.</p>
-      <p class="note">Video görünmürsə, maga-video.mp4 faylını index.html ilə eyni qovluğa yüklə.</p>
-    </section>
-
-    <section class="card">
-      <video controls playsinline preload="metadata">
-        <source src="maga-video.mp4" type="video/mp4">
-        Brauzer videonu aça bilmədi.
-      </video>
-      <h3>Gameplay #2</h3>
-      <p>Yeni videoları və yenilikləri izləmək üçün kanalımıza keç.</p>
-      <a class="btn" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener">DAHA ÇOX VİDEO</a>
-    </section>
-  </div>
+    <a class="video-btn"
+       href="https://t.me/geneltemabakiye1"
+       target="_blank" rel="noopener">
+      🎬 HİLE CHAT VİDEOLARI
+    </a>
+  </section>
 
   <section class="contact" id="contact">
-    <h2>ƏLAQƏ <span class="green">VƏ YENİLİKLƏR</span></h2>
-    <p>Suallar, elanlar və yeniliklər üçün Telegram kanalımıza keç.</p>
-    <a class="btn" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener">✈ @MaqaStoreteam</a>
+    <h2 class="green">ƏLAQƏ</h2>
+    <p>Bütün yeniliklər və məlumatlar üçün MAGA kanalına keç.</p>
+
+    <a class="btn"
+       href="https://t.me/MaqaStoreteam"
+       target="_blank" rel="noopener">
+      ✈ @MaqaStoreteam
+    </a>
   </section>
+
 </main>
 
 <footer>
