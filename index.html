@@ -3,217 +3,398 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#030605">
-<title>MAGA STORE | PUBG Xəbərləri</title>
+<title>MAGA — Global Chat</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#030605;color:#fff}
-a{-webkit-tap-highlight-color:transparent}
-header{text-align:center;padding:25px 12px;background:#080d0a;border-bottom:1px solid #17472a}
-.logo{font-size:32px;font-weight:900;letter-spacing:3px;color:#00ff73;text-shadow:0 0 15px #00c853}
-.subtitle{font-size:11px;letter-spacing:2px;color:#a0b5a7;margin-top:8px}
-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:14px 8px;background:#050906}
-nav a{padding:10px 12px;border:1px solid #17472a;border-radius:8px;color:#fff;text-decoration:none;font-size:12px}
-nav a:hover{background:#00c853;color:#001b0a}
-.hero{text-align:center;padding:45px 17px;background:radial-gradient(ellipse at top,#10351d,#030605 75%)}
-.hero h1{font-size:clamp(25px,6vw,37px);margin-bottom:15px}
-.green{color:#00ff73}
-p{line-height:1.7}
-.hero p,.news-intro,.contact>p{max-width:550px;margin:auto;color:#bdc9c0;font-size:14px}
-.btn{display:inline-block;margin-top:18px;padding:13px 20px;border-radius:9px;background:#00d85b;color:#001b0a;text-decoration:none;font-size:13px;font-weight:bold}
-section{padding:35px 15px}
-.heading{text-align:center;font-size:24px;margin-bottom:12px}
-.news-intro{text-align:center;margin-bottom:23px}
-.search-wrap{max-width:650px;margin:0 auto 17px}
-#newsSearch{width:100%;padding:14px;background:#080f0a;border:1px solid #205333;border-radius:10px;color:white;font-size:15px;outline:none}
-#newsSearch:focus{border-color:#00ff73}
-.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:22px}
-.filter{padding:9px 13px;border-radius:20px;border:1px solid #205333;background:#09110b;color:#d5e3d8;cursor:pointer}
-.filter.active,.filter:hover{background:#00c853;color:#001b0a;border-color:#00c853}
-.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:15px;max-width:1000px;margin:auto}
-.news-card{background:#080f0a;border:1px solid #17472a;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.news-top{height:7px;background:linear-gradient(90deg,#00c853,#00ff73)}
-.news-content{padding:19px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
-.tag{font-size:11px;color:#00ff73;border:1px solid #176331;border-radius:20px;padding:5px 9px;margin-bottom:13px}
-.news-card h3{font-size:18px;line-height:1.4;margin-bottom:10px}
-.news-card p{font-size:13px;color:#b8c7bc;margin-bottom:14px}
-.news-date{font-size:11px;color:#829187;margin-bottom:12px}
-.news-card .btn{margin-top:auto}
-.news-card[hidden]{display:none}
-#noResults{text-align:center;color:#bdc9c0;padding:20px;display:none}
-.official{text-align:center;background:#060a07;border-top:1px solid #17472a;border-bottom:1px solid #17472a}
-.official p{max-width:550px;margin:auto;color:#bdc9c0;font-size:14px}
-.contact{text-align:center;background:radial-gradient(ellipse at top,#0b2112,#030605 75%)}
-.contact h2{margin-bottom:13px}
-.contact-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px}
-.contact-links .btn{margin-top:0}
-.chat{background:#09130c;color:#00ff73;border:1px solid #00c853}
-footer{border-top:1px solid #173521;padding:25px 12px;text-align:center;color:#829187;font-size:12px}
-.footer-logo{color:#00ff73;font-weight:900;font-size:23px;letter-spacing:3px;margin-bottom:8px}
-@media(max-width:400px){.logo{font-size:27px}nav a{padding:9px;font-size:11px}}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #030509;
+  color: #f4f7ff;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #172334;
+  background: #080d15;
+}
+
+.logo {
+  color: #20cfff;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+.subtitle {
+  color: #8293a8;
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 25px auto;
+  padding: 15px;
+}
+
+.card {
+  background: #080d15;
+  border: 1px solid #19283a;
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 18px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+input, button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+input {
+  background: #03070d;
+  color: white;
+  border: 1px solid #24364b;
+  outline: none;
+}
+
+input:focus {
+  border-color: #20cfff;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.primary {
+  background: #13bde9;
+  color: #001019;
+}
+
+.secondary {
+  background: #142235;
+  color: white;
+  border: 1px solid #263d56;
+}
+
+.small {
+  color: #a9bacb;
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.status {
+  font-size: 13px;
+  color: #20cfff;
+  margin-top: 12px;
+  overflow-wrap: anywhere;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.online {
+  color: #39df9b;
+  font-size: 12px;
+}
+
+.messages {
+  height: 350px;
+  overflow-y: auto;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 12px;
+  background: #03070d;
+  border: 1px solid #172638;
+}
+
+.message {
+  padding: 11px;
+  margin-bottom: 10px;
+  background: #0d1928;
+  border: 1px solid #192e43;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+
+.message .name {
+  color: #20cfff;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.message .time {
+  color: #70839a;
+  font-size: 10px;
+  margin-top: 7px;
+}
+
+.message .body {
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.send-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.send-row input {
+  min-width: 0;
+  flex: 1;
+  margin: 0;
+}
+
+.send-row button {
+  width: 95px;
+  margin: 0;
+}
+
+footer {
+  text-align: center;
+  color: #62738a;
+  padding: 20px;
+  font-size: 12px;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">MAGA STORE</div>
-  <div class="subtitle">GAMING • COMMUNITY • NEWS</div>
+  <div class="logo">MAGA</div>
+  <div class="subtitle">GLOBAL COMMUNITY • CHAT</div>
 </header>
 
-<nav>
-  <a href="#home">ANA SƏHİFƏ</a>
-  <a href="#news">PUBG XƏBƏRLƏRİ</a>
-  <a href="#official">RƏSMİ SAYT</a>
-  <a href="#contact">ƏLAQƏ</a>
-</nav>
+<main class="container">
 
-<main>
-  <div class="hero" id="home">
-    <h1>WELCOME TO <span class="green">MAGA STORE</span></h1>
-    <p>PUBG MOBILE xəbərləri, yeniləmələr və gaming dünyasından yeniliklər bir yerdə!</p>
-    <a class="btn" href="#news">📰 XƏBƏRLƏRƏ BAX</a>
-  </div>
+  <section id="authCard" class="card">
+    <h2 id="authTitle">MAGA hesabına daxil ol</h2>
 
-  <section id="news">
-    <h2 class="heading">PUBG <span class="green">XƏBƏRLƏRİ</span></h2>
-    <p class="news-intro">Maraqlı xəbərləri axtar və kateqoriyalara görə süz.</p>
-
-    <div class="search-wrap">
-      <input id="newsSearch" type="search" placeholder="🔎 Xəbər axtar..." aria-label="Xəbər axtar">
+    <div id="registerFields" class="hidden">
+      <input id="fullName" type="text"
+        placeholder="Ad və soyad" maxlength="50">
     </div>
 
-    <div class="filters">
-      <button class="filter active" data-category="all">Hamısı</button>
-      <button class="filter" data-category="update">Yeniləmələr</button>
-      <button class="filter" data-category="event">Tədbirlər</button>
-      <button class="filter" data-category="community">İcma</button>
-    </div>
+    <input id="email" type="email"
+      placeholder="Gmail / E-poçt">
 
-    <div class="news-grid" id="newsGrid">
+    <input id="password" type="password"
+      placeholder="Şifrə (ən azı 6 simvol)" minlength="6">
 
-      <article class="news-card" data-category="update" data-search="4.7 beta test yeniləmə PUBG MOBILE">
-        <div class="news-top"></div>
-        <div class="news-content">
-          <span class="tag">YENİLƏMƏ</span>
-          <div class="news-date">Rəsmi elan • 10.10.2026</div>
-          <h3>4.7 versiyası üçün ikinci beta testi</h3>
-          <p>PUBG MOBILE 4.7 versiyasının ikinci beta testi haqqında rəsmi elanı oxu.</p>
-          <a class="btn" href="https://www.pubgmobile.com/tr/news.shtml" target="_blank" rel="noopener noreferrer">ƏTRAFLI OXU ↗</a>
-        </div>
-      </article>
+    <button id="authButton" class="primary">
+      Daxil ol
+    </button>
 
-      <article class="news-card" data-category="event" data-search="Ocean Odyssey okean macərası temalı rejim geri dönüş">
-        <div class="news-top"></div>
-        <div class="news-content">
-          <span class="tag">TƏDBİR</span>
-          <div class="news-date">Rəsmi elan • 29.09.2026</div>
-          <h3>Ocean Odyssey temalı rejimi geri qayıdır</h3>
-          <p>Temalı oyun rejiminin geri dönüşü barədə rəsmi məlumatlara bax.</p>
-          <a class="btn" href="https://www.pubgmobile.com/tr/news.shtml" target="_blank" rel="noopener noreferrer">ƏTRAFLI OXU ↗</a>
-        </div>
-      </article>
+    <button id="switchButton" class="secondary">
+      Yeni hesab yarat
+    </button>
 
-      <article class="news-card" data-category="update" data-search="4.7 beta test ilk versiya yeniliklər">
-        <div class="news-top"></div>
-        <div class="news-content">
-          <span class="tag">YENİLƏMƏ</span>
-          <div class="news-date">Rəsmi elan • 23.09.2026</div>
-          <h3>4.7 versiyasının ilk beta testi</h3>
-          <p>Yeni versiyanın ilk beta testi barədə məlumatları rəsmi səhifədən yoxla.</p>
-          <a class="btn" href="https://www.pubgmobile.com/tr/news.shtml" target="_blank" rel="noopener noreferrer">ƏTRAFLI OXU ↗</a>
-        </div>
-      </article>
-
-      <article class="news-card" data-category="community" data-search="4.6 rəsmi doğrulama titullar oyunçular">
-        <div class="news-top"></div>
-        <div class="news-content">
-          <span class="tag">İCMA</span>
-          <div class="news-date">Rəsmi elan • 09.09.2026</div>
-          <h3>4.6 versiyası: rəsmi doğrulama və titullar</h3>
-          <p>Rəsmi doğrulama və titul elanı ilə bağlı təfərrüatları yoxla.</p>
-          <a class="btn" href="https://www.pubgmobile.com/tr/news.shtml" target="_blank" rel="noopener noreferrer">ƏTRAFLI OXU ↗</a>
-        </div>
-      </article>
-
-    </div>
-
-    <div id="noResults">Axtarışa uyğun xəbər tapılmadı.</div>
-
-    <div style="text-align:center;margin-top:25px">
-      <a class="btn" href="https://www.pubgmobile.com/tr/news.shtml" target="_blank" rel="noopener noreferrer">
-        BÜTÜN RƏSMİ XƏBƏRLƏR ↗
-      </a>
-    </div>
-    <p style="text-align:center;color:#718078;font-size:11px;margin-top:16px">
-      Qeyd: Bu kartlar rəsmi elanlara keçid verir. Xəbər siyahısı avtomatik yenilənmir.
+    <p class="small">
+      Qeydiyyat e-poçt və şifrə ilə aparılır.
+      SMS tələb olunmur.
     </p>
+
+    <div id="authStatus" class="status"></div>
   </section>
 
-  <section class="official" id="official">
-    <h2 class="heading">RƏSMİ <span class="green">MƏNBƏ</span></h2>
-    <p>Ən son elanları və yeniləmələri PUBG MOBILE-ın rəsmi xəbər səhifəsindən yoxla.</p>
-    <a class="btn" href="https://www.pubgmobile.com/tr/news.shtml" target="_blank" rel="noopener noreferrer">PUBG MOBILE RƏSMİ SAYTI ↗</a>
-  </section>
-
-  <section class="contact" id="contact">
-    <h2 class="heading"><span class="green">MAGA</span> İLƏ ƏLAQƏ</h2>
-    <p>Paylaşımlar və gaming icması üçün Telegram kanallarımıza qoşul.</p>
-
-    <div class="contact-links">
-      <a class="btn" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener noreferrer">✈ TELEGRAM KANALI</a>
-      <a class="btn chat" href="https://t.me/geneltemabakiye1" target="_blank" rel="noopener noreferrer">CHAT KANALI</a>
+  <section id="chatCard" class="card hidden">
+    <div class="chat-header">
+      <div>
+        <h2 style="margin-bottom:6px">Qlobal söhbət</h2>
+        <div class="online">● Ümumi söhbət otağı</div>
+      </div>
+      <button id="logoutButton" class="secondary"
+        style="width:auto;margin:0;padding:10px">
+        Çıxış
+      </button>
     </div>
 
-    <footer>
-      <div class="footer-logo">MAGA STORE</div>
-      <p>GAMING COMMUNITY</p>
-      <p>© 2026 MAGA STORE</p>
-      <p style="margin-top:8px">MAGA STORE müstəqil fan layihəsidir, PUBG MOBILE-ın rəsmi saytı deyil.</p>
-    </footer>
+    <p class="small">
+      Buraya göndərilən mesajlar eyni otaqdakı
+      digər qeydiyyatdan keçmiş istifadəçilərə görünür.
+    </p>
+
+    <div id="messages" class="messages">
+      <p class="small">Mesajlar yüklənir...</p>
+    </div>
+
+    <form id="sendForm" class="send-row">
+      <input id="messageInput" type="text"
+        placeholder="Mesajını yaz..."
+        maxlength="1000" autocomplete="off" required>
+
+      <button class="primary" type="submit">
+        Göndər
+      </button>
+    </form>
+
+    <div id="chatStatus" class="status"></div>
   </section>
+
 </main>
 
+<footer>
+  MAGA © 2026 • Global Chat
+</footer>
+
+<!-- Firebase kitabxanaları -->
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+
 <script>
-const searchInput = document.getElementById('newsSearch');
-const cards = Array.from(document.querySelectorAll('.news-card'));
-const filters = Array.from(document.querySelectorAll('.filter'));
-const noResults = document.getElementById('noResults');
-let selectedCategory = 'all';
+// 1. BURAYA ÖZ FIREBASE MƏLUMATLARINI YAZ
+const firebaseConfig = {
+  apiKey: "BURAYA_API_KEY",
+  authDomain: "BURAYA_PROJECT_ID.firebaseapp.com",
+  projectId: "BURAYA_PROJECT_ID",
+  storageBucket: "BURAYA_STORAGE_BUCKET",
+  messagingSenderId: "BURAYA_SENDER_ID",
+  appId: "BURAYA_APP_ID"
+};
 
-function filterNews() {
-  const query = searchInput.value.trim().toLocaleLowerCase('az');
-  let visibleCount = 0;
+// 2. BAĞLANTI
+firebase.initializeApp(firebaseConfig);
 
-  cards.forEach(card => {
-    const category = card.dataset.category;
-    const searchText = (card.dataset.search + ' ' + card.innerText).toLocaleLowerCase('az');
-    const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
-    const matchesSearch = searchText.includes(query);
-    const visible = matchesCategory && matchesSearch;
+const auth = firebase.auth();
+const db = firebase.firestore();
 
-    card.hidden = !visible;
-    if (visible) visibleCount++;
-  });
+// 3. ELEMENTLƏR
+const authCard = document.getElementById("authCard");
+const chatCard = document.getElementById("chatCard");
+const authTitle = document.getElementById("authTitle");
+const authButton = document.getElementById("authButton");
+const switchButton = document.getElementById("switchButton");
+const registerFields = document.getElementById("registerFields");
+const fullName = document.getElementById("fullName");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const authStatus = document.getElementById("authStatus");
+const chatStatus = document.getElementById("chatStatus");
+const messages = document.getElementById("messages");
+const messageInput = document.getElementById("messageInput");
+const sendForm = document.getElementById("sendForm");
+const logoutButton = document.getElementById("logoutButton");
 
-  noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+let isRegister = false;
+let unsubscribeMessages = null;
+
+// 4. QEYDİYYAT / GİRİŞ DÜYMƏSİ
+switchButton.addEventListener("click", () => {
+  isRegister = !isRegister;
+
+  registerFields.classList.toggle("hidden", !isRegister);
+
+  authTitle.textContent = isRegister
+    ? "Yeni MAGA hesabı yarat"
+    : "MAGA hesabına daxil ol";
+
+  authButton.textContent = isRegister
+    ? "Qeydiyyatdan keç"
+    : "Daxil ol";
+
+  switchButton.textContent = isRegister
+    ? "Artıq hesabım var"
+    : "Yeni hesab yarat";
+
+  authStatus.textContent = "";
+});
+
+// 5. HESAB YARATMA VƏ GİRİŞ
+authButton.addEventListener("click", async () => {
+  const mail = email.value.trim();
+  const pass = password.value;
+  const name = fullName.value.trim();
+
+  authStatus.textContent = "";
+
+  if (!mail || !pass) {
+    authStatus.textContent = "E-poçt və şifrəni daxil et.";
+    return;
+  }
+
+  if (pass.length < 6) {
+    authStatus.textContent = "Şifrə ən azı 6 simvol olmalıdır.";
+    return;
+  }
+
+  if (isRegister && !name) {
+    authStatus.textContent = "Ad və soyadını daxil et.";
+    return;
+  }
+
+  authButton.disabled = true;
+
+  try {
+    if (isRegister) {
+      const result = await auth.createUserWithEmailAndPassword(
+        mail, pass
+      );
+
+      await result.user.updateProfile({
+        displayName: name
+      });
+
+      authStatus.textContent = "Hesab yaradıldı.";
+    } else {
+      await auth.signInWithEmailAndPassword(mail, pass);
+    }
+  } catch (error) {
+    authStatus.textContent = firebaseError(error.code);
+  } finally {
+    authButton.disabled = false;
+  }
+});
+
+function firebaseError(code) {
+  const errors = {
+    "auth/email-already-in-use": "Bu e-poçt artıq qeydiyyatdadır.",
+    "auth/invalid-email": "E-poçt ünvanı düzgün deyil.",
+    "auth/weak-password": "Daha güclü şifrə seç.",
+    "auth/user-not-found": "Bu hesab tapılmadı.",
+    "auth/wrong-password": "Şifrə yanlışdır.",
+    "auth/invalid-credential": "E-poçt və ya şifrə yanlışdır.",
+    "auth/too-many-requests": "Çox cəhd edildi. Sonra yenidən yoxla.",
+    "auth/network-request-failed": "İnternet bağlantısını yoxla."
+  };
+
+  return errors[code] || ("Xəta: " + code);
 }
 
-searchInput.addEventListener('input', filterNews);
-
-filters.forEach(button => {
-  button.addEventListener('click', () => {
-    selectedCategory = button.dataset.category;
-
-    filters.forEach(item => item.classList.remove('active'));
-    button.classList.add('active');
-
-    filterNews();
-  });
-});
-</script>
-
-</body>
-</html>
+// 6. İSTİFADƏÇİ DAXİL OLDUQDA
+auth.onAuthStateChanged(user => {
+  if (user) {
+    authCard.classList.add("hidden");
+    chatCard.classList.remove("hidden");
+    listenMessages();
+  } else {
+    authCard.classList.remove("hidden");
+    chatCard.classList.add("hidden
