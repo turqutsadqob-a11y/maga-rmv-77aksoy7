@@ -4,116 +4,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MAGA STORE</title>
+<title>MAGA STORE | PUBG MOBILE</title>
 <style>
-* { box-sizing: border-box; }
-html, body {
-  margin: 0;
-  min-height: 100%;
-  font-family: Arial, sans-serif;
-  background: #030509;
-  color: white;
-}
-#bg-video {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  opacity: .45;
-  pointer-events: none;
-}
-.overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    180deg, rgba(0,0,0,.45), rgba(0,0,0,.85)
-  );
-  pointer-events: none;
-}
-.content {
-  position: relative;
-  z-index: 2;
-  min-height: 100vh;
-}
-header {
-  padding: 24px 16px;
-  text-align: center;
-  background: rgba(3,5,9,.8);
-  border-bottom: 1px solid #17452b;
-}
-h1 {
-  margin: 0;
-  color: #39ff14;
-  letter-spacing: 4px;
-  text-shadow: 0 0 15px #39ff14;
-}
-.tagline { color: #ccc; margin-top: 10px; }
-main {
-  width: min(900px, 92%);
-  margin: 28px auto;
-}
-.card {
-  padding: 22px;
-  margin-bottom: 18px;
-  background: rgba(5,12,9,.88);
-  border: 1px solid #245b2c;
-  border-radius: 16px;
-}
-h2 { color: #39ff14; margin-top: 0; }
-p { line-height: 1.6; color: #ddd; }
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 13px 20px;
-  border-radius: 10px;
-  background: #39ff14;
-  color: #071006;
-  text-decoration: none;
-  font-weight: bold;
-}
-footer {
-  padding: 25px;
-  text-align: center;
-  color: #aaa;
-}
+*{box-sizing:border-box}
+body{margin:0;background:#080b0c;color:#fff;font-family:Arial,sans-serif}
+header{padding:22px 16px;text-align:center;background:#101713;border-bottom:2px solid #a6ff00}
+.logo{font-size:30px;font-weight:900;letter-spacing:4px;color:#a6ff00}
+header p{color:#b8c0b5;font-size:12px;letter-spacing:2px}
+nav{display:flex;justify-content:center;gap:18px;padding:14px;background:#0c100e;flex-wrap:wrap}
+nav a{color:#ddd;text-decoration:none;font-size:13px}
+.hero{min-height:340px;padding:65px 20px;text-align:center;background:radial-gradient(ellipse at top,#354323,#11170f 48%,#080b0c)}
+.hero h1{font-size:clamp(30px,8vw,48px);margin:0 0 15px}
+.hero h1 span{color:#a6ff00}
+.hero p{color:#c2c9bd;line-height:1.7}
+.btn{display:inline-block;background:#a6ff00;color:#101500;padding:14px 22px;margin:10px 4px;border-radius:5px;text-decoration:none;font-weight:bold}
+.btn.secondary{background:transparent;border:1px solid #a6ff00;color:#a6ff00}
+main{max-width:950px;margin:auto;padding:24px 15px}
+.section-title{text-align:center;font-size:24px;margin:25px 0}
+.section-title span{color:#a6ff00}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.card{background:#111713;border:1px solid #303b2b;border-radius:10px;padding:22px;text-align:center}
+.card .symbol{font-size:38px}
+.card h3{margin:12px 0;color:#a6ff00}
+.card p{color:#b8c0b5;font-size:14px;line-height:1.6}
+.contact{margin-top:30px;padding:28px 18px;background:#111713;border:1px solid #35472b;border-radius:10px;text-align:center}
+footer{text-align:center;padding:24px;color:#8b9389;font-size:12px;border-top:1px solid #273024}
 </style>
 </head>
 <body>
+<header>
+  <div class="logo">MAGA STORE</div>
+  <p>PUBG MOBILE COMMUNITY</p>
+</header>
 
-<video id="bg-video" autoplay muted loop playsinline>
-  <source src="maga-bg.mp4" type="video/mp4">
-</video>
-<div class="overlay"></div>
+<nav>
+  <a href="#home">ANA SƏHİFƏ</a>
+  <a href="#services">BÖLMƏLƏR</a>
+  <a href="#contact">ƏLAQƏ</a>
+</nav>
 
-<div class="content">
-  <header>
-    <h1>MAGA STORE</h1>
-    <div class="tagline">GAMING • STORE • COMMUNITY</div>
-  </header>
+<section class="hero" id="home">
+  <h1>ENTER THE <span>BATTLEGROUND</span></h1>
+  <p>MAGA STORE-a xoş gəlmisən.<br>
+  PUBG MOBILE yenilikləri və oyun icması.</p>
+  <a class="btn" href="https://t.me/Magatg1">TELEGRAMDA YAZ</a>
+  <a class="btn secondary" href="#services">BÖLMƏLƏRƏ BAX</a>
+</section>
 
-  <main>
+<main>
+  <h2 class="section-title" id="services">MAGA <span>BÖLMƏLƏRİ</span></h2>
+  <div class="grid">
     <section class="card">
-      <h2>MAGA STORE-a xoş gəlmisən</h2>
-      <p>Gaming videoları, yeniliklər və icma xəbərləri bir yerdə.</p>
-      <a class="btn" href="https://t.me/Magatg1">Telegram ilə əlaqə</a>
+      <div class="symbol">🎮</div>
+      <h3>PUBG MOBILE</h3>
+      <p>Oyun xəbərləri, yeniliklər və faydalı məlumatlar.</p>
+      <a class="btn" href="https://t.me/Magatg1">MƏLUMAT AL</a>
     </section>
-
     <section class="card">
-      <h2>Video nümayişi</h2>
-      <p>Fon videosu görünməsə belə saytın əsas məzmunu işləməlidir.</p>
-      <video controls playsinline preload="metadata"
-        style="width:100%;border-radius:12px;background:#000">
-        <source src="maga-bg.mp4" type="video/mp4">
-        Video faylı tapılmadı. GitHub layihəsinə maga-bg.mp4 yüklə.
-      </video>
+      <div class="symbol">🎬</div>
+      <h3>GAMEPLAY</h3>
+      <p>Oyun videoları və maraqlı oyun anları.</p>
+      <a class="btn" href="https://t.me/Magatg1">VİDEO BARƏDƏ YAZ</a>
     </section>
-  </main>
+    <section class="card">
+      <div class="symbol">💬</div>
+      <h3>ƏLAQƏ</h3>
+      <p>Sualın və ya təklifin varsa, birbaşa MAGA-ya yaz.</p>
+      <a class="btn" href="https://t.me/Magatg1">MƏNƏ YAZ</a>
+    </section>
+  </div>
 
-  <footer>© MAGA STORE</footer>
-</div>
+  <section class="contact" id="contact">
+    <h2>ƏLAQƏ ÜÇÜN</h2>
+    <p>Saytda istifadəçilər arasında mesajlaşma yoxdur.<br>
+    Bütün müraciətlər Telegram vasitəsilə qəbul edilir.</p>
+    <a class="btn" href="https://t.me/Magatg1">✈ @Magatg1</a>
+  </section>
+</main>
 
+<footer>© 2026 MAGA STORE · Fan-made community website</footer>
 </body>
 </html>
