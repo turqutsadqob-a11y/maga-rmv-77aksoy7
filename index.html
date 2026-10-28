@@ -1,88 +1,116 @@
+
 <!DOCTYPE html>
 <html lang="az">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MAGA TikTok</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>PUBG HILE CENTER</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#080808;color:white;font-family:Arial,sans-serif}
-header{position:sticky;top:0;background:#111;padding:16px;text-align:center;z-index:2}
-header h2{margin:0;color:#25f4ee}
-.add{padding:15px;background:#151515}
-input{width:100%;padding:13px;border-radius:9px;border:1px solid #444;background:#222;color:white}
-button{width:100%;padding:12px;margin-top:8px;border:0;border-radius:8px;background:#25f4ee;color:#000;font-weight:bold}
-#feed{max-width:600px;margin:auto;padding:12px}
-.video{background:#151515;border-radius:12px;padding:12px;margin-bottom:18px;text-align:center}
-.video a{color:#25f4ee;overflow-wrap:anywhere}
-.remove{background:#333;color:white}
+body{
+ margin:0;background:#080808;color:white;
+ font-family:Arial,sans-serif;
+}
+header{
+ text-align:center;padding:25px 15px;
+ background:linear-gradient(135deg,#190000,#080808,#240000);
+ border-bottom:2px solid #ff2020;
+}
+.logo{
+ font-size:28px;font-weight:900;letter-spacing:2px;
+ color:#ff2929;text-shadow:0 0 15px #ff0000;
+}
+.tag{color:#aaa;font-size:11px;letter-spacing:3px;margin-top:8px}
+.container{max-width:600px;margin:auto;padding:18px}
+.card{
+ background:#111;border:1px solid #292929;
+ border-radius:15px;padding:20px;margin-bottom:18px;
+ box-shadow:0 0 18px #ff00000a;
+}
+h2{font-size:20px;margin:0 0 13px;color:#ff3030}
+p{color:#ccc;line-height:1.8;font-size:14px}
+.features{list-style:none;padding:0;line-height:2.2;color:#eee;font-size:14px}
+.features li::before{content:"✔ ";color:#ff3030;font-weight:bold}
+.btn{
+ display:block;text-decoration:none;text-align:center;
+ background:#ed1717;color:white;font-weight:bold;
+ padding:16px 12px;border-radius:10px;margin-top:18px;
+ box-shadow:0 0 15px #ff000033;
+}
+.btn:active{transform:scale(.98)}
+.video{
+ width:100%;display:block;border-radius:12px;
+ background:#000;border:1px solid #333;
+}
+.label{
+ display:inline-block;background:#250909;color:#ff4444;
+ border:1px solid #682020;border-radius:20px;
+ padding:6px 11px;font-size:11px;margin-bottom:12px
+}
+footer{text-align:center;color:#666;font-size:11px;padding:20px}
 </style>
 </head>
+
 <body>
-<header><h2>MAGA TIKTOK</h2><div>Video lenti</div></header>
+<header>
+ <div class="logo">PUBG HILE CENTER</div>
+ <div class="tag">ANDROID • IOS • GAMING</div>
+</header>
 
-<div class="add">
-<input id="videoUrl" placeholder="TikTok video linkini bura yapışdır">
-<button onclick="addVideo()">Videonu əlavə et</button>
-</div>
+<main class="container">
 
-<div id="feed"></div>
+ <section class="card">
+  <span class="label">PUBG MOBILE</span>
+  <h2>🔥 Hile Paylaşımları</h2>
+  <p>
+   PUBG MOBILE oyunçuları üçün paylaşım kanalımıza xoş gəlmisiniz!
+   Kanalımızda Android və iOS üçün oyun faylları və oyunla bağlı
+   paylaşımlar yerləşdirilir.
+  </p>
 
-<script>
-const feed=document.getElementById("feed");
-let videos=[];
-try{videos=JSON.parse(localStorage.getItem("magaVideos")||"[]")}catch(e){videos=[]}
+  <ul class="features">
+   <li>Android və iOS haqqında paylaşımlar</li>
+   <li>Pulsuz təqdim olunan fayllar</li>
+   <li>Yeni paylaşımlar və məlumatlar</li>
+   <li>Telegram kanalımızda yeniliklər</li>
+  </ul>
 
-function render(){
- feed.replaceChildren();
- videos.forEach((url,index)=>{
-  const card=document.createElement("div");
-  card.className="video";
-  const link=document.createElement("a");
-  link.href=url;
-  link.target="_blank";
-  link.rel="noopener";
-  link.textContent="TikTok videosunu aç";
-  const frame=document.createElement("iframe");
-  const match=url.match(/\/video\/(\d+)/);
-  if(match){
-   frame.src="https://www.tiktok.com/player/v1/"+match[1]+"?description=1&music_info=1";
-   frame.width="100%";
-   frame.height="580";
-   frame.style.border="0";
-   frame.allow="fullscreen";
-   frame.title="TikTok video";
-  }
-  const remove=document.createElement("button");
-  remove.className="remove";
-  remove.textContent="Siyahıdan sil";
-  remove.onclick=()=>{
-   videos.splice(index,1);
-   save();
-  };
-  card.append(link);
-  if(match)card.appendChild(frame);
-  card.appendChild(remove);
-  feed.appendChild(card);
- });
-}
-function addVideo(){
- const input=document.getElementById("videoUrl");
- const url=input.value.trim();
- if(!/^https:\/\/(www\.tiktok\.com|vm\.tiktok\.com|vt\.tiktok\.com)\//i.test(url)){
-  alert("Düzgün TikTok video linki daxil et.");
-  return;
- }
- if(!videos.includes(url))videos.unshift(url);
- save();
- input.value="";
-}
-function save(){
- try{localStorage.setItem("magaVideos",JSON.stringify(videos))}
- catch(e){alert("Telefon yaddaşında saxlamaq mümkün olmadı.")}
- render();
-}
-render();
-</script>
+  <p>
+   Qeyd: Faylların uyğunluğu və təhlükəsizliyi ayrıca yoxlanmalıdır.
+   Heç bir faylın risksiz olduğuna zəmanət verilmir.
+  </p>
+
+  <a class="btn"
+     href="https://t.me/+Q4t7-RjqbCM2YzIy"
+     target="_blank"
+     rel="noopener noreferrer">
+     TELEGRAM KANALINA DAXİL OL ➜
+  </a>
+ </section>
+
+ <section class="card">
+  <h2>🎬 Hile Videosu</h2>
+  <p>Video paylaşımına bax:</p>
+
+  <video class="video" controls playsinline preload="metadata">
+   <source src="20675.mp4" type="video/mp4">
+   Brauzeriniz videonu aça bilmir.
+  </video>
+
+  <a class="btn"
+     href="https://t.me/+Q4t7-RjqbCM2YzIy"
+     target="_blank"
+     rel="noopener noreferrer">
+     KANALA KEÇ 🔥
+  </a>
+ </section>
+
+</main>
+
+<footer>
+ PUBG HILE CENTER © 2026
+</footer>
 </body>
 </html>
