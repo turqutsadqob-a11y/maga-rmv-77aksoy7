@@ -3,131 +3,176 @@
 <html lang="az">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="theme-color" content="#090909">
-<title>MAQA STORE | PUBG MOBILE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<title>MAQA STORE | PUBG COMMUNITY</title>
 <style>
-:root{--red:#ff2525;--bg:#080808;--card:#121212;--muted:#aaa}
+:root{--red:#ff2929;--bg:#080808;--card:#131313;--line:#302020}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:#fff;font-family:Arial,sans-serif}
 a{color:inherit;text-decoration:none}
-header{position:sticky;top:0;z-index:10;background:#090909ed;backdrop-filter:blur(12px);border-bottom:1px solid #302020}
-nav{max-width:950px;margin:auto;padding:15px;display:flex;justify-content:space-between;align-items:center;gap:10px}
-.brand{font-weight:900;font-size:21px;color:var(--red);letter-spacing:2px}
-.navbtn{font-size:12px;background:#241010;border:1px solid #632020;padding:10px 12px;border-radius:9px}
-.hero{padding:55px 18px 42px;text-align:center;background:radial-gradient(ellipse at top,#451010 0%,#160808 40%,#080808 75%)}
-.badge{display:inline-block;border:1px solid #733030;border-radius:20px;padding:7px 12px;color:#ff8c8c;font-size:11px;letter-spacing:2px}
-h1{font-size:clamp(32px,8vw,55px);font-weight:900;line-height:1.05;margin:20px 0 12px}
-h1 span{color:var(--red);text-shadow:0 0 24px #ff252555}
-.hero p{max-width:520px;margin:0 auto;color:#bbb;font-size:14px;line-height:1.8}
-.btn{display:block;text-align:center;border-radius:10px;padding:15px;margin-top:15px;font-weight:bold;font-size:14px}
-.primary{background:var(--red);color:white;box-shadow:0 0 22px #ff25252c}
-.secondary{border:1px solid #542020;background:#1b0d0d;color:#ff8888}
-.actions{max-width:350px;margin:20px auto 0}
-.container{max-width:900px;margin:auto;padding:25px 15px}
-.section-title{text-align:center;font-size:25px;margin:10px 0}
-.desc{text-align:center;color:#999;font-size:13px;line-height:1.7;margin:0 auto 22px;max-width:520px}
+header{position:sticky;top:0;z-index:5;background:#090909f2;border-bottom:1px solid var(--line)}
+nav{max-width:1000px;margin:auto;padding:14px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-size:21px;font-weight:900;letter-spacing:2px;color:var(--red)}
+.navlink{font-size:12px;border:1px solid #542020;padding:10px;border-radius:8px}
+.hero{text-align:center;padding:50px 18px;background:radial-gradient(ellipse at top,#501010,#080808 70%)}
+.badge{font-size:11px;letter-spacing:2px;color:#ff9696;border:1px solid #703030;border-radius:20px;padding:8px 12px;display:inline-block}
+h1{font-size:clamp(35px,9vw,58px);line-height:1.05;margin:22px 0 12px}
+h1 span{color:var(--red);text-shadow:0 0 22px #ff000055}
+p{color:#bbb;line-height:1.75;font-size:14px}
+.hero p{max-width:550px;margin:0 auto}
+.buttons{max-width:380px;margin:20px auto}
+.btn{display:block;padding:15px;margin-top:12px;border-radius:10px;text-align:center;font-weight:bold;font-size:13px}
+.red{background:var(--red);color:white}
+.dark{background:#1c1010;border:1px solid #632525;color:#ff9b9b}
+.wrap{max-width:950px;padding:25px 14px;margin:auto}
+.heading{text-align:center;font-size:24px;margin:12px 0}
+.intro{text-align:center;max-width:550px;margin:0 auto 22px}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.card{background:linear-gradient(145deg,#171717,#0e0e0e);border:1px solid #292020;border-radius:14px;padding:17px}
-.symbol{font-size:27px}
-.card h3{margin:12px 0 8px;font-size:16px}
-.card p{color:#aaa;font-size:12px;line-height:1.7;margin:0}
-.tag{display:inline-block;color:#ff8b8b;background:#301010;padding:5px 8px;border-radius:5px;font-size:10px;margin-top:12px}
-.notice{margin-top:18px;background:#17120b;border:1px solid #51401d;color:#d6c59e;padding:14px;border-radius:10px;font-size:12px;line-height:1.8}
-.banner{margin-top:22px;background:linear-gradient(120deg,#330b0b,#150909);border:1px solid #572020;border-radius:15px;padding:22px;text-align:center}
-.banner h2{margin:0 0 8px;font-size:22px}
-.banner p{color:#bbb;font-size:13px;line-height:1.7}
-footer{text-align:center;border-top:1px solid #252020;color:#777;padding:24px 15px;font-size:11px;line-height:2}
-@media(min-width:600px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{padding-top:75px;padding-bottom:65px}}
+.card{background:linear-gradient(140deg,#191919,#0d0d0d);border:1px solid var(--line);padding:17px;border-radius:14px}
+.icon{font-size:29px}
+.card h3{font-size:16px;margin:12px 0 7px}
+.card p{font-size:12px;margin:0}
+.tag{display:inline-block;background:#301010;color:#ff9999;padding:6px 8px;font-size:10px;border-radius:5px;margin-top:12px}
+.notice{margin-top:18px;background:#191309;border:1px solid #51401d;color:#e0d0a8;padding:14px;border-radius:10px;font-size:12px;line-height:1.8}
+input{width:100%;background:#111;color:white;border:1px solid #493030;border-radius:9px;padding:14px;font-size:14px;margin:10px 0 16px}
+details{padding:14px;background:#121212;border:1px solid #292020;border-radius:10px;margin-top:10px}
+summary{cursor:pointer;font-weight:bold;font-size:13px}
+details p{font-size:12px}
+.banner{margin-top:18px;padding:22px;text-align:center;background:linear-gradient(130deg,#390d0d,#151010);border:1px solid #592020;border-radius:15px}
+.banner h3{margin:0 0 8px}
+footer{text-align:center;padding:24px 14px;color:#777;font-size:11px;line-height:2;border-top:1px solid #252020}
+.hidden{display:none}
+@media(min-width:650px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{padding:75px 20px}}
 </style>
 </head>
 <body>
 
 <header>
 <nav>
- <div class="brand">MAQA STORE</div>
- <a class="navbtn" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener noreferrer">TELEGRAM ↗</a>
+ <div class="logo">MAQA STORE</div>
+ <a class="navlink" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener">TELEGRAM ↗</a>
 </nav>
 </header>
 
 <section class="hero">
- <div class="badge">PUBG MOBILE COMMUNITY</div>
- <h1>GAME <span>WITHOUT</span><br>LIMITS</h1>
- <p>
- PUBG MOBILE haqqında paylaşımlar, ESP barədə məlumatlar,
- Android və iOS üçün quraşdırma təlimatları və yeni xəbərlər.
- Yenilikləri Telegram kanalımızdan izləyin.
- </p>
- <div class="actions">
-  <a class="btn primary" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener noreferrer">✈ TELEGRAM KANALINA DAXİL OL</a>
-  <a class="btn secondary" href="#features">PAYLAŞIMLARA BAX ↓</a>
+ <span class="badge">PUBG MOBILE COMMUNITY</span>
+ <h1>MAQA <span>STORE</span></h1>
+ <p>Android və iOS oyunçuları üçün PUBG xəbərləri, ESP məlumatları, quraşdırma bələdçiləri və oyun icması.</p>
+ <div class="buttons">
+  <a class="btn red" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener">✈ TELEGRAM KANALINA DAXİL OL</a>
+  <a class="btn dark" href="https://t.me/+vwoJSEuSBdFlNDAy" target="_blank" rel="noopener">💬 TELEQRAM CHAT KANALIMIZ</a>
+  <a class="btn dark" href="#bolmeler">BÖLMƏLƏRƏ BAX ↓</a>
  </div>
 </section>
 
-<main class="container" id="features">
- <h2 class="section-title">🔥 PAYLAŞIM BÖLMƏLƏRİ</h2>
- <p class="desc">Oyunla bağlı məlumatlar və quraşdırma izahları bir yerdə.</p>
+<main class="wrap">
+ <h2 class="heading" id="bolmeler">🔥 BÜTÜN BÖLMƏLƏR</h2>
+ <p class="intro">Məlumat axtar, maraqlandığın bölməni seç və Telegram icmamıza qoşul.</p>
 
- <div class="grid">
-  <article class="card">
-   <div class="symbol">👁️</div>
-   <h3>ESP Məlumatları</h3>
-   <p>ESP texnologiyası və oyunlarda vizual göstəricilər haqqında məlumatlar.</p>
+ <input id="search" type="search" placeholder="🔎 Bölmə axtar: Android, ESP, iOS...">
+
+ <div class="grid" id="cards">
+  <article class="card" data-search="esp vizual məlumat">
+   <div class="icon">👁️</div><h3>ESP məlumatları</h3>
+   <p>ESP barədə ümumi məlumat, uyğunluq və oyun təhlükəsizliyi.</p>
    <span class="tag">ESP INFO</span>
   </article>
-
-  <article class="card">
-   <div class="symbol">📱</div>
-   <h3>Android</h3>
-   <p>Android cihazları üçün uyğunluq, fayl təhlükəsizliyi və quraşdırma təlimatları.</p>
-   <span class="tag">ANDROID GUIDE</span>
+  <article class="card" data-search="android apk quraşdırma">
+   <div class="icon">📱</div><h3>Android</h3>
+   <p>APK faylları, versiya uyğunluğu və quraşdırma qaydaları.</p>
+   <span class="tag">ANDROID</span>
   </article>
-
-  <article class="card">
-   <div class="symbol">🍎</div>
-   <h3>iOS</h3>
-   <p>iPhone və iPad üçün uyğunluq və təhlükəsiz quraşdırma barədə məlumatlar.</p>
-   <span class="tag">iOS GUIDE</span>
+  <article class="card" data-search="ios iphone ipad">
+   <div class="icon">🍎</div><h3>iOS / iPhone</h3>
+   <p>iOS versiyaları, uyğunluq və cihaz təhlükəsizliyi.</p>
+   <span class="tag">iOS</span>
   </article>
-
-  <article class="card">
-   <div class="symbol">🛠️</div>
-   <h3>Quraşdırma</h3>
-   <p>Faylların uyğunluğunu yoxlamaq və quraşdırma addımlarını öyrənmək.</p>
-   <span class="tag">HOW TO</span>
+  <article class="card" data-search="quraşdırma install guide">
+   <div class="icon">🛠️</div><h3>Quraşdırma bələdçisi</h3>
+   <p>Fayl mənbəyini yoxlamaq və təhlükəsiz quraşdırma addımları.</p>
+   <span class="tag">GUIDE</span>
   </article>
-
-  <article class="card">
-   <div class="symbol">🆕</div>
-   <h3>Yeni versiyalar</h3>
-   <p>Oyun yeniləmələri və faylların versiya uyğunluğu haqqında məlumatlar.</p>
+  <article class="card" data-search="update versiya yeniləmə">
+   <div class="icon">🔄</div><h3>Yeniləmələr</h3>
+   <p>Oyun yeniləmələri və versiya uyğunluğu barədə məlumatlar.</p>
    <span class="tag">UPDATES</span>
   </article>
-
-  <article class="card">
-   <div class="symbol">🛡️</div>
-   <h3>Təhlükəsizlik</h3>
-   <p>Şübhəli APK-lardan qorunma, hesab təhlükəsizliyi və risklər haqqında məsləhətlər.</p>
+  <article class="card" data-search="security təhlükəsizlik hesab">
+   <div class="icon">🛡️</div><h3>Təhlükəsizlik</h3>
+   <p>Saxta APK-lardan, hesab oğurluğundan və zərərli proqramlardan qorun.</p>
    <span class="tag">SAFETY</span>
+  </article>
+  <article class="card" data-search="community icma söhbət">
+   <div class="icon">💬</div><h3>İcma və söhbət</h3>
+   <p>Oyunçularla müzakirələr üçün Telegram söhbət kanalına keç.</p>
+   <a class="btn dark" href="https://t.me/+vwoJSEuSBdFlNDAy" target="_blank" rel="noopener">CHAT-A KEÇ ↗</a>
+  </article>
+  <article class="card" data-search="xəbərlər news">
+   <div class="icon">📰</div><h3>Oyun xəbərləri</h3>
+   <p>Yenilikləri və icma paylaşımlarını Telegram kanalımızda izlə.</p>
+   <a class="btn dark" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener">XƏBƏRLƏR ↗</a>
+  </article>
+  <article class="card" data-search="faq suallar kömək">
+   <div class="icon">❓</div><h3>Suallar və kömək</h3>
+   <p>Tez-tez verilən suallara cavab tap.</p>
+   <a class="btn dark" href="#faq">FAQ-A BAX ↓</a>
   </article>
  </div>
 
  <div class="notice">
-  ⚠️ <b>Diqqət:</b> Kənar fayllar hesabın bloklanmasına, məlumatların oğurlanmasına və cihazın zərər görməsinə səbəb ola bilər. ESP və digər icazəsiz üstünlüklər oyun qaydalarını poza bilər. Heç bir faylın təhlükəsizliyinə və ya bloklanmayacağına zəmanət verilmir.
+  ⚠️ <b>Təhlükəsizlik xəbərdarlığı:</b> Naməlum APK faylları hesab məlumatlarını oğurlaya və cihazına zərər verə bilər. ESP və icazəsiz üçüncü tərəf alətləri oyun qaydalarını poza, hesabın bloklanmasına səbəb ola bilər. Faylların təhlükəsizliyinə və bloklanmayacağına zəmanət verilmir.
  </div>
 
+ <section id="faq" style="margin-top:32px">
+  <h2 class="heading">❓ TEZ-TEZ VERİLƏN SUALLAR</h2>
+  <details>
+   <summary>Android və iOS dəstəklənirmi?</summary>
+   <p>Sayt hər iki platforma üçün məlumat bölmələri təqdim edir. Konkret faylın uyğunluğu ayrıca yoxlanmalıdır.</p>
+  </details>
+  <details>
+   <summary>Fayllar pulsuzdurmu?</summary>
+   <p>Qiymət və mövcudluq barədə yalnız kanalda dərc edilmiş məlumatlara əsaslan. Sayt özü fayl təqdim etmir.</p>
+  </details>
+  <details>
+   <summary>Telegram chat kanalına necə daxil olum?</summary>
+   <p>Aşağıdakı düyməyə bas. Telegram açılacaq; kanal dəvəti və giriş imkanı Telegram tərəfindən idarə olunur.</p>
+   <a class="btn dark" href="https://t.me/+vwoJSEuSBdFlNDAy" target="_blank" rel="noopener">TELEQRAM CHAT KANALIMIZ ↗</a>
+  </details>
+  <details>
+   <summary>Sayt rəsmi PUBG saytıdır?</summary>
+   <p>Xeyr. MAQA STORE müstəqil icma səhifəsidir və PUBG MOBILE və ya Tencent tərəfindən idarə olunmur.</p>
+  </details>
+ </section>
+
  <section class="banner">
-  <h2>📢 BİZİM TELEGRAM KANALIMIZ</h2>
-  <p>Yeni paylaşımlar və məlumatlar üçün kanala qoşul.</p>
-  <a class="btn primary" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener noreferrer">KANALA DAXİL OL ➜</a>
+  <h3>📢 TELEGRAM KANALIMIZ</h3>
+  <p>Paylaşımlar və yeniliklər üçün əsas kanalımıza qoşul.</p>
+  <a class="btn red" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener">KANALA DAXİL OL ➜</a>
+  <h3 style="margin-top:25px">💬 TELEQRAM CHAT KANALIMIZ</h3>
+  <p>İcma söhbətlərinə keçid üçün aşağıya bas.</p>
+  <a class="btn dark" href="https://t.me/+vwoJSEuSBdFlNDAy" target="_blank" rel="noopener">CHAT KANALINA DAXİL OL ➜</a>
  </section>
 </main>
 
 <footer>
  <b>MAQA STORE</b><br>
- PUBG MOBILE icması üçün məlumat və paylaşım səhifəsi.<br>
- Bu sayt rəsmi PUBG MOBILE və ya Tencent saytı deyil.
+ PUBG MOBILE icması üçün müstəqil məlumat səhifəsi.<br>
+ Rəsmi PUBG MOBILE / Tencent saytı deyil.
 </footer>
+
+<script>
+const search=document.getElementById('search');
+const cards=[...document.querySelectorAll('#cards .card')];
+search.addEventListener('input',()=>{
+ const q=search.value.toLowerCase().trim();
+ cards.forEach(card=>{
+  card.classList.toggle('hidden',
+   !(card.innerText+' '+card.dataset.search).toLowerCase().includes(q)
+  );
+ });
+});
+</script>
 </body>
 </html>
