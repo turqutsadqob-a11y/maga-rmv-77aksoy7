@@ -3,114 +3,131 @@
 <html lang="az">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080808">
-<title>PUBG HILE CENTER</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#090909">
+<title>MAQA STORE | PUBG MOBILE</title>
 <style>
+:root{--red:#ff2525;--bg:#080808;--card:#121212;--muted:#aaa}
 *{box-sizing:border-box}
-body{
- margin:0;background:#080808;color:white;
- font-family:Arial,sans-serif;
-}
-header{
- text-align:center;padding:25px 15px;
- background:linear-gradient(135deg,#190000,#080808,#240000);
- border-bottom:2px solid #ff2020;
-}
-.logo{
- font-size:28px;font-weight:900;letter-spacing:2px;
- color:#ff2929;text-shadow:0 0 15px #ff0000;
-}
-.tag{color:#aaa;font-size:11px;letter-spacing:3px;margin-top:8px}
-.container{max-width:600px;margin:auto;padding:18px}
-.card{
- background:#111;border:1px solid #292929;
- border-radius:15px;padding:20px;margin-bottom:18px;
- box-shadow:0 0 18px #ff00000a;
-}
-h2{font-size:20px;margin:0 0 13px;color:#ff3030}
-p{color:#ccc;line-height:1.8;font-size:14px}
-.features{list-style:none;padding:0;line-height:2.2;color:#eee;font-size:14px}
-.features li::before{content:"✔ ";color:#ff3030;font-weight:bold}
-.btn{
- display:block;text-decoration:none;text-align:center;
- background:#ed1717;color:white;font-weight:bold;
- padding:16px 12px;border-radius:10px;margin-top:18px;
- box-shadow:0 0 15px #ff000033;
-}
-.btn:active{transform:scale(.98)}
-.video{
- width:100%;display:block;border-radius:12px;
- background:#000;border:1px solid #333;
-}
-.label{
- display:inline-block;background:#250909;color:#ff4444;
- border:1px solid #682020;border-radius:20px;
- padding:6px 11px;font-size:11px;margin-bottom:12px
-}
-footer{text-align:center;color:#666;font-size:11px;padding:20px}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#fff;font-family:Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:10;background:#090909ed;backdrop-filter:blur(12px);border-bottom:1px solid #302020}
+nav{max-width:950px;margin:auto;padding:15px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.brand{font-weight:900;font-size:21px;color:var(--red);letter-spacing:2px}
+.navbtn{font-size:12px;background:#241010;border:1px solid #632020;padding:10px 12px;border-radius:9px}
+.hero{padding:55px 18px 42px;text-align:center;background:radial-gradient(ellipse at top,#451010 0%,#160808 40%,#080808 75%)}
+.badge{display:inline-block;border:1px solid #733030;border-radius:20px;padding:7px 12px;color:#ff8c8c;font-size:11px;letter-spacing:2px}
+h1{font-size:clamp(32px,8vw,55px);font-weight:900;line-height:1.05;margin:20px 0 12px}
+h1 span{color:var(--red);text-shadow:0 0 24px #ff252555}
+.hero p{max-width:520px;margin:0 auto;color:#bbb;font-size:14px;line-height:1.8}
+.btn{display:block;text-align:center;border-radius:10px;padding:15px;margin-top:15px;font-weight:bold;font-size:14px}
+.primary{background:var(--red);color:white;box-shadow:0 0 22px #ff25252c}
+.secondary{border:1px solid #542020;background:#1b0d0d;color:#ff8888}
+.actions{max-width:350px;margin:20px auto 0}
+.container{max-width:900px;margin:auto;padding:25px 15px}
+.section-title{text-align:center;font-size:25px;margin:10px 0}
+.desc{text-align:center;color:#999;font-size:13px;line-height:1.7;margin:0 auto 22px;max-width:520px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{background:linear-gradient(145deg,#171717,#0e0e0e);border:1px solid #292020;border-radius:14px;padding:17px}
+.symbol{font-size:27px}
+.card h3{margin:12px 0 8px;font-size:16px}
+.card p{color:#aaa;font-size:12px;line-height:1.7;margin:0}
+.tag{display:inline-block;color:#ff8b8b;background:#301010;padding:5px 8px;border-radius:5px;font-size:10px;margin-top:12px}
+.notice{margin-top:18px;background:#17120b;border:1px solid #51401d;color:#d6c59e;padding:14px;border-radius:10px;font-size:12px;line-height:1.8}
+.banner{margin-top:22px;background:linear-gradient(120deg,#330b0b,#150909);border:1px solid #572020;border-radius:15px;padding:22px;text-align:center}
+.banner h2{margin:0 0 8px;font-size:22px}
+.banner p{color:#bbb;font-size:13px;line-height:1.7}
+footer{text-align:center;border-top:1px solid #252020;color:#777;padding:24px 15px;font-size:11px;line-height:2}
+@media(min-width:600px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{padding-top:75px;padding-bottom:65px}}
 </style>
 </head>
-
 <body>
+
 <header>
- <div class="logo">PUBG HILE CENTER</div>
- <div class="tag">ANDROID • IOS • GAMING</div>
+<nav>
+ <div class="brand">MAQA STORE</div>
+ <a class="navbtn" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener noreferrer">TELEGRAM ↗</a>
+</nav>
 </header>
 
-<main class="container">
+<section class="hero">
+ <div class="badge">PUBG MOBILE COMMUNITY</div>
+ <h1>GAME <span>WITHOUT</span><br>LIMITS</h1>
+ <p>
+ PUBG MOBILE haqqında paylaşımlar, ESP barədə məlumatlar,
+ Android və iOS üçün quraşdırma təlimatları və yeni xəbərlər.
+ Yenilikləri Telegram kanalımızdan izləyin.
+ </p>
+ <div class="actions">
+  <a class="btn primary" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener noreferrer">✈ TELEGRAM KANALINA DAXİL OL</a>
+  <a class="btn secondary" href="#features">PAYLAŞIMLARA BAX ↓</a>
+ </div>
+</section>
 
- <section class="card">
-  <span class="label">PUBG MOBILE</span>
-  <h2>🔥 Hile Paylaşımları</h2>
-  <p>
-   PUBG MOBILE oyunçuları üçün paylaşım kanalımıza xoş gəlmisiniz!
-   Kanalımızda Android və iOS üçün oyun faylları və oyunla bağlı
-   paylaşımlar yerləşdirilir.
-  </p>
+<main class="container" id="features">
+ <h2 class="section-title">🔥 PAYLAŞIM BÖLMƏLƏRİ</h2>
+ <p class="desc">Oyunla bağlı məlumatlar və quraşdırma izahları bir yerdə.</p>
 
-  <ul class="features">
-   <li>Android və iOS haqqında paylaşımlar</li>
-   <li>Pulsuz təqdim olunan fayllar</li>
-   <li>Yeni paylaşımlar və məlumatlar</li>
-   <li>Telegram kanalımızda yeniliklər</li>
-  </ul>
+ <div class="grid">
+  <article class="card">
+   <div class="symbol">👁️</div>
+   <h3>ESP Məlumatları</h3>
+   <p>ESP texnologiyası və oyunlarda vizual göstəricilər haqqında məlumatlar.</p>
+   <span class="tag">ESP INFO</span>
+  </article>
 
-  <p>
-   Qeyd: Faylların uyğunluğu və təhlükəsizliyi ayrıca yoxlanmalıdır.
-   Heç bir faylın risksiz olduğuna zəmanət verilmir.
-  </p>
+  <article class="card">
+   <div class="symbol">📱</div>
+   <h3>Android</h3>
+   <p>Android cihazları üçün uyğunluq, fayl təhlükəsizliyi və quraşdırma təlimatları.</p>
+   <span class="tag">ANDROID GUIDE</span>
+  </article>
 
-  <a class="btn"
-     href="https://t.me/+Q4t7-RjqbCM2YzIy"
-     target="_blank"
-     rel="noopener noreferrer">
-     TELEGRAM KANALINA DAXİL OL ➜
-  </a>
+  <article class="card">
+   <div class="symbol">🍎</div>
+   <h3>iOS</h3>
+   <p>iPhone və iPad üçün uyğunluq və təhlükəsiz quraşdırma barədə məlumatlar.</p>
+   <span class="tag">iOS GUIDE</span>
+  </article>
+
+  <article class="card">
+   <div class="symbol">🛠️</div>
+   <h3>Quraşdırma</h3>
+   <p>Faylların uyğunluğunu yoxlamaq və quraşdırma addımlarını öyrənmək.</p>
+   <span class="tag">HOW TO</span>
+  </article>
+
+  <article class="card">
+   <div class="symbol">🆕</div>
+   <h3>Yeni versiyalar</h3>
+   <p>Oyun yeniləmələri və faylların versiya uyğunluğu haqqında məlumatlar.</p>
+   <span class="tag">UPDATES</span>
+  </article>
+
+  <article class="card">
+   <div class="symbol">🛡️</div>
+   <h3>Təhlükəsizlik</h3>
+   <p>Şübhəli APK-lardan qorunma, hesab təhlükəsizliyi və risklər haqqında məsləhətlər.</p>
+   <span class="tag">SAFETY</span>
+  </article>
+ </div>
+
+ <div class="notice">
+  ⚠️ <b>Diqqət:</b> Kənar fayllar hesabın bloklanmasına, məlumatların oğurlanmasına və cihazın zərər görməsinə səbəb ola bilər. ESP və digər icazəsiz üstünlüklər oyun qaydalarını poza bilər. Heç bir faylın təhlükəsizliyinə və ya bloklanmayacağına zəmanət verilmir.
+ </div>
+
+ <section class="banner">
+  <h2>📢 BİZİM TELEGRAM KANALIMIZ</h2>
+  <p>Yeni paylaşımlar və məlumatlar üçün kanala qoşul.</p>
+  <a class="btn primary" href="https://t.me/MaqaStoreteam" target="_blank" rel="noopener noreferrer">KANALA DAXİL OL ➜</a>
  </section>
-
- <section class="card">
-  <h2>🎬 Hile Videosu</h2>
-  <p>Video paylaşımına bax:</p>
-
-  <video class="video" controls playsinline preload="metadata">
-   <source src="20675.mp4" type="video/mp4">
-   Brauzeriniz videonu aça bilmir.
-  </video>
-
-  <a class="btn"
-     href="https://t.me/+Q4t7-RjqbCM2YzIy"
-     target="_blank"
-     rel="noopener noreferrer">
-     KANALA KEÇ 🔥
-  </a>
- </section>
-
 </main>
 
 <footer>
- PUBG HILE CENTER © 2026
+ <b>MAQA STORE</b><br>
+ PUBG MOBILE icması üçün məlumat və paylaşım səhifəsi.<br>
+ Bu sayt rəsmi PUBG MOBILE və ya Tencent saytı deyil.
 </footer>
 </body>
 </html>
